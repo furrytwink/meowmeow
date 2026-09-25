@@ -287,11 +287,53 @@ def check_extraction() -> None:
                 record("FAIL", f"feature module missing: {spec['file']}")
                 continue
             if sha256_file(path) == meta["module_file_sha256"]:
+                live_note = ""
+                if meta["live"]:
+                    live_note = (f"; live getter(s) {', '.join(meta['live'])}: "
+                                 f"{meta['live_reads_rewritten']} reads rewritten")
                 record("PASS", f"feature module {spec['file']}: byte-exact re-derivation "
-                               f"({meta['body_chars']:,} frozen body chars, ctx: {len(meta['ctx'])} upvalues)")
+                               f"({meta['body_chars']:,} body chars, ctx: {len(meta['ctx'])} upvalues"
+                               f"{live_note})")
             else:
                 record("FAIL", f"feature module {spec['file']}: differs from re-derivation "
-                               f"(body must stay byte-frozen; edit scripts/extract.py FEATURE_MODULES)")
+                               f"(edit scripts/extract.py FEATURE_MODULES, never the module file)")
+
+        # live-getter modules: semantic rewrite proof on the WRITTEN file —
+        #   1. no free read/write of the live names may remain (the scope-aware
+        #      rewrite must have caught every upvalue read)
+        #   2. replacing __<name>() back with <name> must reproduce the frozen
+        #      original driver slice byte-for-byte (bijection on the spans)
+        import luascopes
+        live_specs = [(s, m) for s, m in zip(extract.FEATURE_MODULES, patch_metas) if m["live"]]
+        for spec, meta in live_specs:
+            path = PROJECT_ROOT / spec["file"]
+            if not path.exists():
+                continue  # already FAILed by the re-derivation check above
+            text = read_exact(path)
+            marker_at = text.find("-- [ guard(")
+            if marker_at < 0:
+                record("FAIL", f"live-getter rewrite {spec['file']}: body marker not found")
+                continue
+            nl = text.find("\n", marker_at)
+            body = text[nl + 1:]
+            body = body[: body.rfind("end;")]
+            res = luascopes.analyze_body(body)
+            unresolved = [n for n in meta["live"]
+                          if res["read_spans"].get(n) or n in res["writes"]]
+            rev = body
+            for n in meta["live"]:
+                rev = rev.replace(f"__{n}()", n)
+            rev_ok = sha256(rev.encode("utf-8")) == meta["body_sha256"]
+            if unresolved:
+                record("FAIL", f"live-getter rewrite {spec['file']}: unresolved free "
+                               f"reads/writes of {unresolved} — getter would not track unload")
+            elif not rev_ok:
+                record("FAIL", f"live-getter rewrite {spec['file']}: reverse-mapped body "
+                               f"differs from the frozen driver slice")
+            else:
+                record("PASS", f"live-getter rewrite {spec['file']}: 0 remaining free reads of "
+                               f"{', '.join(meta['live'])}; reverse-maps byte-exactly to the "
+                               f"frozen driver slice ({meta['live_reads_rewritten']} reads)")
 
 
 def check_boot_data() -> None:

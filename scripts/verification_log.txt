@@ -1,4 +1,4 @@
-roblox-modular verification — 2026-09-25T15:49:33+00:00
+roblox-modular verification — 2026-09-25T16:56:28+00:00
 
 == 1. EXTRACTION INTEGRITY ==
 [PASS] input file intact (3,121,224 bytes, sha256 ce0401343fcbe843...)
@@ -11,21 +11,71 @@ roblox-modular verification — 2026-09-25T15:49:33+00:00
 [PASS] round-trip src/visualsui/init.luau: byte-exact (338,481 bytes)
 [PASS] round-trip assets/boot_data.json: byte-exact (1,827,778 bytes)
 [PASS] round-trip src/neverlose/skins.luau: byte-exact (28,666 bytes)
-[PASS] src/init.lua embeds the driver + documented feature patches (modules.loading, modules.links, modules.cosmetics, modules.backtrack, modules.world_fx_math, modules.weather, modules.misc, modules.fun_hud, modules.aimbot, modules.bot_esp, modules.server, modules.trade, modules.menu, modules.config)
-[PASS] feature module src/modules/loading.lua: byte-exact re-derivation (3,135 frozen body chars, ctx: 4 upvalues)
-[PASS] feature module src/modules/links.lua: byte-exact re-derivation (729 frozen body chars, ctx: 3 upvalues)
-[PASS] feature module src/modules/cosmetics.lua: byte-exact re-derivation (3,139 frozen body chars, ctx: 4 upvalues)
-[PASS] feature module src/modules/backtrack.lua: byte-exact re-derivation (2,544 frozen body chars, ctx: 2 upvalues)
-[PASS] feature module src/modules/world_fx_math.lua: byte-exact re-derivation (3,222 frozen body chars, ctx: 1 upvalues)
-[PASS] feature module src/modules/weather.lua: byte-exact re-derivation (9,375 frozen body chars, ctx: 7 upvalues)
-[PASS] feature module src/modules/misc.lua: byte-exact re-derivation (28,249 frozen body chars, ctx: 8 upvalues)
-[PASS] feature module src/modules/fun_hud.lua: byte-exact re-derivation (5,116 frozen body chars, ctx: 5 upvalues)
-[PASS] feature module src/modules/aimbot.lua: byte-exact re-derivation (16,858 frozen body chars, ctx: 8 upvalues)
-[PASS] feature module src/modules/bot_esp.lua: byte-exact re-derivation (5,824 frozen body chars, ctx: 4 upvalues)
-[PASS] feature module src/modules/server.lua: byte-exact re-derivation (8,561 frozen body chars, ctx: 7 upvalues)
-[PASS] feature module src/modules/trade.lua: byte-exact re-derivation (20,507 frozen body chars, ctx: 6 upvalues)
-[PASS] feature module src/modules/menu.lua: byte-exact re-derivation (21,113 frozen body chars, ctx: 9 upvalues)
-[PASS] feature module src/modules/config.lua: byte-exact re-derivation (2,471 frozen body chars, ctx: 4 upvalues)
+[PASS] src/init.lua embeds the driver + documented feature patches (modules.loading, modules.links, modules.gunchams, modules.preview, modules.shaders, modules.lighting, modules.gamefx, modules.aura, modules.cosmetics, modules.motiongraph, modules.backtrack, modules.backtrack_chams, modules.circles, modules.trail, modules.world_fx_math, modules.glyphs, modules.models, modules.chinahat, modules.killfx, modules.character, modules.combat, modules.bullet_tracers, modules.constellations, modules.starfall, modules.weather, modules.crosshair, modules.animations, modules.camera, modules.misc, modules.fun_hud, modules.aimbot, modules.bot_esp, modules.server, modules.trade, modules.menu, modules.music, modules.assets, modules.social, modules.config)
+[PASS] feature module src/modules/loading.lua: byte-exact re-derivation (3,135 body chars, ctx: 4 upvalues)
+[PASS] feature module src/modules/links.lua: byte-exact re-derivation (729 body chars, ctx: 3 upvalues)
+[PASS] feature module src/modules/gunchams.lua: byte-exact re-derivation (18,028 body chars, ctx: 12 upvalues; live getter(s) ALIVE: 3 reads rewritten)
+[PASS] feature module src/modules/preview.lua: byte-exact re-derivation (21,548 body chars, ctx: 9 upvalues; live getter(s) ALIVE: 4 reads rewritten)
+[PASS] feature module src/modules/shaders.lua: byte-exact re-derivation (25,351 body chars, ctx: 7 upvalues; live getter(s) ALIVE: 5 reads rewritten)
+[PASS] feature module src/modules/lighting.lua: byte-exact re-derivation (3,248 body chars, ctx: 3 upvalues; live getter(s) ALIVE: 2 reads rewritten)
+[PASS] feature module src/modules/gamefx.lua: byte-exact re-derivation (104,002 body chars, ctx: 7 upvalues; live getter(s) ALIVE: 10 reads rewritten)
+[PASS] feature module src/modules/aura.lua: byte-exact re-derivation (25,061 body chars, ctx: 11 upvalues; live getter(s) ALIVE: 10 reads rewritten)
+[PASS] feature module src/modules/cosmetics.lua: byte-exact re-derivation (3,139 body chars, ctx: 4 upvalues)
+[PASS] feature module src/modules/motiongraph.lua: byte-exact re-derivation (11,559 body chars, ctx: 6 upvalues; live getter(s) ALIVE: 2 reads rewritten)
+[PASS] feature module src/modules/backtrack.lua: byte-exact re-derivation (2,544 body chars, ctx: 2 upvalues)
+[PASS] feature module src/modules/backtrack_chams.lua: byte-exact re-derivation (6,747 body chars, ctx: 7 upvalues; live getter(s) ALIVE: 1 reads rewritten)
+[PASS] feature module src/modules/circles.lua: byte-exact re-derivation (22,998 body chars, ctx: 11 upvalues; live getter(s) ALIVE: 9 reads rewritten)
+[PASS] feature module src/modules/trail.lua: byte-exact re-derivation (22,005 body chars, ctx: 8 upvalues; live getter(s) ALIVE: 4 reads rewritten)
+[PASS] feature module src/modules/world_fx_math.lua: byte-exact re-derivation (3,222 body chars, ctx: 1 upvalues)
+[PASS] feature module src/modules/glyphs.lua: byte-exact re-derivation (11,245 body chars, ctx: 8 upvalues; live getter(s) ALIVE: 1 reads rewritten)
+[PASS] feature module src/modules/models.lua: byte-exact re-derivation (27,215 body chars, ctx: 14 upvalues; live getter(s) ALIVE: 16 reads rewritten)
+[PASS] feature module src/modules/chinahat.lua: byte-exact re-derivation (8,658 body chars, ctx: 7 upvalues; live getter(s) ALIVE: 1 reads rewritten)
+[PASS] feature module src/modules/killfx.lua: byte-exact re-derivation (12,846 body chars, ctx: 9 upvalues; live getter(s) ALIVE: 2 reads rewritten)
+[PASS] feature module src/modules/character.lua: byte-exact re-derivation (25,181 body chars, ctx: 12 upvalues; live getter(s) ALIVE: 16 reads rewritten)
+[PASS] feature module src/modules/combat.lua: byte-exact re-derivation (12,431 body chars, ctx: 9 upvalues; live getter(s) ALIVE: 1 reads rewritten)
+[PASS] feature module src/modules/bullet_tracers.lua: byte-exact re-derivation (7,250 body chars, ctx: 6 upvalues; live getter(s) ALIVE: 4 reads rewritten)
+[PASS] feature module src/modules/constellations.lua: byte-exact re-derivation (53,998 body chars, ctx: 9 upvalues; live getter(s) ALIVE: 1 reads rewritten)
+[PASS] feature module src/modules/starfall.lua: byte-exact re-derivation (11,437 body chars, ctx: 8 upvalues; live getter(s) ALIVE: 4 reads rewritten)
+[PASS] feature module src/modules/weather.lua: byte-exact re-derivation (9,375 body chars, ctx: 7 upvalues)
+[PASS] feature module src/modules/crosshair.lua: byte-exact re-derivation (12,082 body chars, ctx: 8 upvalues; live getter(s) ALIVE: 6 reads rewritten)
+[PASS] feature module src/modules/animations.lua: byte-exact re-derivation (40,788 body chars, ctx: 12 upvalues; live getter(s) ALIVE: 3 reads rewritten)
+[PASS] feature module src/modules/camera.lua: byte-exact re-derivation (1,595 body chars, ctx: 5 upvalues; live getter(s) ALIVE: 1 reads rewritten)
+[PASS] feature module src/modules/misc.lua: byte-exact re-derivation (28,249 body chars, ctx: 8 upvalues)
+[PASS] feature module src/modules/fun_hud.lua: byte-exact re-derivation (5,116 body chars, ctx: 5 upvalues)
+[PASS] feature module src/modules/aimbot.lua: byte-exact re-derivation (16,858 body chars, ctx: 8 upvalues)
+[PASS] feature module src/modules/bot_esp.lua: byte-exact re-derivation (5,824 body chars, ctx: 4 upvalues)
+[PASS] feature module src/modules/server.lua: byte-exact re-derivation (8,561 body chars, ctx: 7 upvalues)
+[PASS] feature module src/modules/trade.lua: byte-exact re-derivation (20,507 body chars, ctx: 6 upvalues)
+[PASS] feature module src/modules/menu.lua: byte-exact re-derivation (21,113 body chars, ctx: 9 upvalues)
+[PASS] feature module src/modules/music.lua: byte-exact re-derivation (73,572 body chars, ctx: 11 upvalues; live getter(s) ALIVE: 9 reads rewritten)
+[PASS] feature module src/modules/assets.lua: byte-exact re-derivation (24,883 body chars, ctx: 10 upvalues; live getter(s) ALIVE: 9 reads rewritten)
+[PASS] feature module src/modules/social.lua: byte-exact re-derivation (62,380 body chars, ctx: 12 upvalues; live getter(s) ALIVE: 6 reads rewritten)
+[PASS] feature module src/modules/config.lua: byte-exact re-derivation (2,471 body chars, ctx: 4 upvalues)
+[PASS] live-getter rewrite src/modules/gunchams.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (3 reads)
+[PASS] live-getter rewrite src/modules/preview.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (4 reads)
+[PASS] live-getter rewrite src/modules/shaders.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (5 reads)
+[PASS] live-getter rewrite src/modules/lighting.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (2 reads)
+[PASS] live-getter rewrite src/modules/gamefx.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (10 reads)
+[PASS] live-getter rewrite src/modules/aura.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (10 reads)
+[PASS] live-getter rewrite src/modules/motiongraph.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (2 reads)
+[PASS] live-getter rewrite src/modules/backtrack_chams.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (1 reads)
+[PASS] live-getter rewrite src/modules/circles.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (9 reads)
+[PASS] live-getter rewrite src/modules/trail.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (4 reads)
+[PASS] live-getter rewrite src/modules/glyphs.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (1 reads)
+[PASS] live-getter rewrite src/modules/models.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (16 reads)
+[PASS] live-getter rewrite src/modules/chinahat.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (1 reads)
+[PASS] live-getter rewrite src/modules/killfx.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (2 reads)
+[PASS] live-getter rewrite src/modules/character.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (16 reads)
+[PASS] live-getter rewrite src/modules/combat.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (1 reads)
+[PASS] live-getter rewrite src/modules/bullet_tracers.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (4 reads)
+[PASS] live-getter rewrite src/modules/constellations.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (1 reads)
+[PASS] live-getter rewrite src/modules/starfall.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (4 reads)
+[PASS] live-getter rewrite src/modules/crosshair.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (6 reads)
+[PASS] live-getter rewrite src/modules/animations.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (3 reads)
+[PASS] live-getter rewrite src/modules/camera.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (1 reads)
+[PASS] live-getter rewrite src/modules/music.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (9 reads)
+[PASS] live-getter rewrite src/modules/assets.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (9 reads)
+[PASS] live-getter rewrite src/modules/social.lua: 0 remaining free reads of ALIVE; reverse-maps byte-exactly to the frozen driver slice (6 reads)
 
 == 2. BOOT_DATA INTEGRITY ==
 [PASS] assets/boot_data.json parses as JSON
@@ -62,10 +112,32 @@ roblox-modular verification — 2026-09-25T15:49:33+00:00
 [PASS] luau-compile src/modules/example.lua
 [PASS] luau-compile src/modules/loading.lua
 [PASS] luau-compile src/modules/links.lua
+[PASS] luau-compile src/modules/gunchams.lua
+[PASS] luau-compile src/modules/preview.lua
+[PASS] luau-compile src/modules/shaders.lua
+[PASS] luau-compile src/modules/lighting.lua
+[PASS] luau-compile src/modules/gamefx.lua
+[PASS] luau-compile src/modules/aura.lua
 [PASS] luau-compile src/modules/cosmetics.lua
+[PASS] luau-compile src/modules/motiongraph.lua
 [PASS] luau-compile src/modules/backtrack.lua
+[PASS] luau-compile src/modules/backtrack_chams.lua
+[PASS] luau-compile src/modules/circles.lua
+[PASS] luau-compile src/modules/trail.lua
 [PASS] luau-compile src/modules/world_fx_math.lua
+[PASS] luau-compile src/modules/glyphs.lua
+[PASS] luau-compile src/modules/models.lua
+[PASS] luau-compile src/modules/chinahat.lua
+[PASS] luau-compile src/modules/killfx.lua
+[PASS] luau-compile src/modules/character.lua
+[PASS] luau-compile src/modules/combat.lua
+[PASS] luau-compile src/modules/bullet_tracers.lua
+[PASS] luau-compile src/modules/constellations.lua
+[PASS] luau-compile src/modules/starfall.lua
 [PASS] luau-compile src/modules/weather.lua
+[PASS] luau-compile src/modules/crosshair.lua
+[PASS] luau-compile src/modules/animations.lua
+[PASS] luau-compile src/modules/camera.lua
 [PASS] luau-compile src/modules/misc.lua
 [PASS] luau-compile src/modules/fun_hud.lua
 [PASS] luau-compile src/modules/aimbot.lua
@@ -73,9 +145,12 @@ roblox-modular verification — 2026-09-25T15:49:33+00:00
 [PASS] luau-compile src/modules/server.lua
 [PASS] luau-compile src/modules/trade.lua
 [PASS] luau-compile src/modules/menu.lua
+[PASS] luau-compile src/modules/music.lua
+[PASS] luau-compile src/modules/assets.lua
+[PASS] luau-compile src/modules/social.lua
 [PASS] luau-compile src/modules/config.lua
 [PASS] luau-compile dist/main.lua
-[PASS] luau-analyze src/init.lua (informational: 1982 environmental + 221 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/init.lua (informational: 319 environmental + 8 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/neverlose/init.lua (informational: 78 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/neverlose/skins.luau (informational: 59 environmental + 1 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/visualsui/init.luau (informational: 1734 environmental + 30 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
@@ -84,10 +159,32 @@ roblox-modular verification — 2026-09-25T15:49:33+00:00
 [PASS] luau-analyze src/modules/example.lua
 [PASS] luau-analyze src/modules/loading.lua (informational: 25 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/modules/links.lua (informational: 3 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/gunchams.lua (informational: 38 environmental + 1 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/preview.lua (informational: 119 environmental + 1 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/shaders.lua (informational: 37 environmental + 1 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/lighting.lua (informational: 5 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/gamefx.lua (informational: 121 environmental + 1 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/aura.lua (informational: 127 environmental + 1 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/modules/cosmetics.lua (informational: 1 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/motiongraph.lua (informational: 13 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/modules/backtrack.lua (informational: 2 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/backtrack_chams.lua (informational: 4 environmental + 1 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/circles.lua (informational: 95 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/trail.lua (informational: 59 environmental + 2 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/modules/world_fx_math.lua (informational: 14 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/glyphs.lua (informational: 22 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/models.lua (informational: 47 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/chinahat.lua (informational: 12 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/killfx.lua (informational: 34 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/character.lua (informational: 35 environmental + 1 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/combat.lua (informational: 26 environmental + 3 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/bullet_tracers.lua (informational: 28 environmental + 1 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/constellations.lua (informational: 131 environmental + 1 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/starfall.lua (informational: 38 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/modules/weather.lua (informational: 67 environmental + 3 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/crosshair.lua (informational: 17 environmental + 3 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/animations.lua (informational: 101 environmental + 4 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/camera.lua
 [PASS] luau-analyze src/modules/misc.lua (informational: 60 environmental + 5 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/modules/fun_hud.lua (informational: 20 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/modules/aimbot.lua (informational: 26 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
@@ -95,25 +192,28 @@ roblox-modular verification — 2026-09-25T15:49:33+00:00
 [PASS] luau-analyze src/modules/server.lua (informational: 29 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/modules/trade.lua (informational: 29 environmental + 2 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/modules/menu.lua (informational: 33 environmental + 1 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/music.lua (informational: 210 environmental + 3 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/assets.lua (informational: 21 environmental + 4 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/social.lua (informational: 318 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/modules/config.lua
-[PASS] luau-analyze dist/main.lua (informational: 2312 environmental + 265 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze dist/main.lua (informational: 2307 environmental + 379 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] stylua --check 2 hand-written file(s)
 [WARN] stylua --check scoped to hand-written files only — extracted payloads, the driver tail (incl. feature-module patches) and the generated modules index must stay byte-exact per extraction integrity checks
-[PASS] selene 21 file(s) (0 errors; warnings tolerated via --allow-warnings, executor std from executor.yml)
+[PASS] selene 46 file(s) (0 errors; warnings tolerated via --allow-warnings, executor std from executor.yml)
 
 == 4. BUNDLE INTEGRITY ==
-[bundle] dist/main.lua: 3,143,952 bytes, 4 source modules, 16 code modules
-[bundle] sha256 d72aedb149a9adea...
+[bundle] dist/main.lua: 3,201,466 bytes, 4 source modules, 41 code modules
+[bundle] sha256 fa5639b8c4a87051...
 [bundle] self-check: all require() literals resolve, no duplicate module ids
 [bundle] DONE
 [PASS] bundle.py ran clean
 [PASS] all 4 embedded source modules are byte-identical to the extracted payloads
-[PASS] every require() literal resolves (20 distinct ids)
+[PASS] every require() literal resolves (45 distinct ids)
 [PASS] no duplicate module ids
 [PASS] registry assignment scan: no duplicate keys
 [PASS] all 3 text + 15 binary assets present, hashes match
 [PASS] dist/main.lua is valid Luau (luau-compile)
-[PASS] dist/main.lua hash matches bundle report (3,143,952 bytes)
+[PASS] dist/main.lua hash matches bundle report (3,201,466 bytes)
 
 == 5. RUNTIME SMOKE TEST (lune) ==
    SMOKE_NOTE skins chunk not compiled (game-gated path)
@@ -121,7 +221,7 @@ roblox-modular verification — 2026-09-25T15:49:33+00:00
 [PASS] lune smoke test: driver ran to completion, payloads compiled, BOOT_DATA JSON-decoded byte-exactly
 
 == 6. ZIP INTEGRITY ==
-[zip] wrote dist/roblox-modular.zip (4,767,917 bytes, 59 files)
+[zip] wrote dist/roblox-modular.zip (4,828,828 bytes, 86 files)
 [zip] input/message(47).txt included: False
 [zip] DONE
 [PASS] build_zip.py ran clean
@@ -130,4 +230,4 @@ roblox-modular verification — 2026-09-25T15:49:33+00:00
 [PASS] zip has no absolute paths or traversal segments
 [PASS] input/message(47).txt excluded from zip (use INCLUDE_INPUT=1 to embed)
 
-SUMMARY: 108 passed, 0 failed, 1 warnings, 0 skipped
+SUMMARY: 208 passed, 0 failed, 1 warnings, 0 skipped

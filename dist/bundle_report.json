@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-25T15:51:04+00:00",
+  "generated_utc": "2026-09-25T16:56:35+00:00",
   "entry": "src/init.lua",
   "source_modules": {
     "neverlose": {
@@ -33,25 +33,85 @@
       "sha256": "187c34e12df2ea1e271430b7ad6c3c1f9c3e3c44fcd7c48150915ffaae9e64ff",
       "chars": 17926
     },
+    "modules.animations": {
+      "file": "src/modules/animations.lua",
+      "sha256": "e9b4345f5e8c2f852538d89205722fd4ae1dbebaf08246ce39e7235098d84570",
+      "chars": 42675
+    },
+    "modules.assets": {
+      "file": "src/modules/assets.lua",
+      "sha256": "593a97f7e459ff6f0afe2c2709d4aa36c5ecd0363e9afe6d5c64b8c33ace4791",
+      "chars": 26702
+    },
+    "modules.aura": {
+      "file": "src/modules/aura.lua",
+      "sha256": "4c00fdf232237ceb008e4954b09533dd51b87a40e2836ff0a0ccabb519005a16",
+      "chars": 26866
+    },
     "modules.backtrack": {
       "file": "src/modules/backtrack.lua",
       "sha256": "bd3134573fd9ced755ade3e7c1e79e06a65880140840975a6010bac2985d987a",
       "chars": 3270
+    },
+    "modules.backtrack_chams": {
+      "file": "src/modules/backtrack_chams.lua",
+      "sha256": "9f6ad86733a32adf9544a11ad58e85ad54feb18eaed9c040583c84b2b8394a5a",
+      "chars": 8382
     },
     "modules.bot_esp": {
       "file": "src/modules/bot_esp.lua",
       "sha256": "41ee91708ea8e6c3bd1a91d3df72d7ad67d65c79908afc30c2949ee9c52c781b",
       "chars": 6678
     },
+    "modules.bullet_tracers": {
+      "file": "src/modules/bullet_tracers.lua",
+      "sha256": "61219d1d37575ca8f14afc466bbfe000b50425c3cd38b143d30bfa95b4e9afc9",
+      "chars": 8817
+    },
+    "modules.camera": {
+      "file": "src/modules/camera.lua",
+      "sha256": "c5dfde461e770a232b0494cec364150a2686c8530fe599b84e40b7cc4260d96e",
+      "chars": 3040
+    },
+    "modules.character": {
+      "file": "src/modules/character.lua",
+      "sha256": "234e5d3e4b9d56d0e05a5f9115cc843eac3955f26a8d61cb6e7de2ad961c1e4c",
+      "chars": 27122
+    },
+    "modules.chinahat": {
+      "file": "src/modules/chinahat.lua",
+      "sha256": "36d3b5b21a0ff16b1da9834c33c769a18ee872d4f6421fb8a06bb517aeef1116",
+      "chars": 10255
+    },
+    "modules.circles": {
+      "file": "src/modules/circles.lua",
+      "sha256": "68969ae8297c719a0cdd088afa55375cffa2638b9cb836604d3822fe1dfdae2e",
+      "chars": 24817
+    },
+    "modules.combat": {
+      "file": "src/modules/combat.lua",
+      "sha256": "dd6f4d29057b62115bce7acc0d6a1dd734889bda2d8e1bede5e851e0e12f6aeb",
+      "chars": 14172
+    },
     "modules.config": {
       "file": "src/modules/config.lua",
       "sha256": "1b26d2e623e300249f02967ea24ba0d8f14c4b858734b2d8ad7e4d8c0cc04493",
       "chars": 3283
     },
+    "modules.constellations": {
+      "file": "src/modules/constellations.lua",
+      "sha256": "db8ec12bf9d07b12fca3815221cd1aeca4c14a81003af888c69ff95e22d1c3f1",
+      "chars": 55711
+    },
     "modules.cosmetics": {
       "file": "src/modules/cosmetics.lua",
       "sha256": "8ccf048bb03595498ccb1d76cfea2d892b5769969b00b5efc1064f3fa2538997",
       "chars": 3969
+    },
+    "modules.crosshair": {
+      "file": "src/modules/crosshair.lua",
+      "sha256": "7de8f4b6668e567c48b54effe756df252abe1d7ca241faba2422811ae0eb4807",
+      "chars": 13751
     },
     "modules.example": {
       "file": "src/modules/example.lua",
@@ -62,6 +122,31 @@
       "file": "src/modules/fun_hud.lua",
       "sha256": "dcc907c34788cd1086bd6c3e40ca74186c6b4e52eafc358a9e5246089d65c74c",
       "chars": 6036
+    },
+    "modules.gamefx": {
+      "file": "src/modules/gamefx.lua",
+      "sha256": "ac92a1dda541047db9c27e1a9508fa2643c06b6c79248fdfbbb909de2ac31257",
+      "chars": 105651
+    },
+    "modules.glyphs": {
+      "file": "src/modules/glyphs.lua",
+      "sha256": "941012f5fa8f18c5fe7394accb75c76b0034c2041bd9390051e54437ad6ffd04",
+      "chars": 12844
+    },
+    "modules.gunchams": {
+      "file": "src/modules/gunchams.lua",
+      "sha256": "5fdc28e6c251102978310212b6deb911cfc4ec1cb6a77d46833b5dcefb42410a",
+      "chars": 19927
+    },
+    "modules.killfx": {
+      "file": "src/modules/killfx.lua",
+      "sha256": "94b9a43f5f33d34a1d43b13c5bb38cf91cb87cd4685da174ff8c07c1254b606f",
+      "chars": 14579
+    },
+    "modules.lighting": {
+      "file": "src/modules/lighting.lua",
+      "sha256": "bd4d4665688bf204e3deed971486e222dd2dcdab51b781529521bc281c134f61",
+      "chars": 4605
     },
     "modules.links": {
       "file": "src/modules/links.lua",
@@ -83,15 +168,55 @@
       "sha256": "97f2e841171f4a1cc1a41daf28b24032304422668953f967a96b20341c183ad2",
       "chars": 29281
     },
+    "modules.models": {
+      "file": "src/modules/models.lua",
+      "sha256": "feefd90b72a73e339dd3d242f766880259c91d1be09530923a6f679119f61775",
+      "chars": 29246
+    },
+    "modules.motiongraph": {
+      "file": "src/modules/motiongraph.lua",
+      "sha256": "c3234989724cb8c77b7ae96c9720a3d0ff32f29b08a716b60cadc513450eb44e",
+      "chars": 13124
+    },
+    "modules.music": {
+      "file": "src/modules/music.lua",
+      "sha256": "d20002b851727b01ec731fe5a21cd382ca5bc459ad25cbc8aa8dd2d1c66d9ce8",
+      "chars": 75355
+    },
+    "modules.preview": {
+      "file": "src/modules/preview.lua",
+      "sha256": "6aa09d26b14d28cf16e584d519e2943aa0bdc06feb6ac6bbcacc207379d04197",
+      "chars": 23203
+    },
     "modules.server": {
       "file": "src/modules/server.lua",
       "sha256": "db93291885c3ab972d2c071218c9d656b9ae5de344aa4d80aaff4daf1eeef316",
       "chars": 9595
     },
+    "modules.shaders": {
+      "file": "src/modules/shaders.lua",
+      "sha256": "cf45f19932dd53267c5438d4b1c13474d2c7b23681fefaa54478ab0d571b45d7",
+      "chars": 26942
+    },
+    "modules.social": {
+      "file": "src/modules/social.lua",
+      "sha256": "faf2a658037a3189f39c183d16b28b349f36e694b8e4af937175f9a150e21f4d",
+      "chars": 64191
+    },
+    "modules.starfall": {
+      "file": "src/modules/starfall.lua",
+      "sha256": "1852da56fe50c20cd375dc41786cf598f085546b5b82515c7771c1052fe5314e",
+      "chars": 13068
+    },
     "modules.trade": {
       "file": "src/modules/trade.lua",
       "sha256": "b167cf5b402a0c70a21ef592e19bf8efd42d19cac5f81f213b14777037c162ec",
       "chars": 21385
+    },
+    "modules.trail": {
+      "file": "src/modules/trail.lua",
+      "sha256": "53bf0d30235fd90ddcb3ad254dbae4337758d4ccc81986b076b577eb3d40c12c",
+      "chars": 23626
     },
     "modules.weather": {
       "file": "src/modules/weather.lua",
@@ -106,7 +231,7 @@
   },
   "dist": {
     "file": "dist/main.lua",
-    "sha256": "e9f286b5d814750bcfe4272a89d4f1e4527ebf81b1c16d20cf5d7b2734b36865",
-    "bytes": 3143952
+    "sha256": "fa5639b8c4a87051b2c0c33e1fa8d548ab02ca4528d8461fadc60d6524a81a0f",
+    "bytes": 3201466
   }
 }

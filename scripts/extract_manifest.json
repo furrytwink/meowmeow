@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-25T15:50:47+00:00",
+  "generated_utc": "2026-09-25T16:56:27+00:00",
   "input": {
     "path": "input/message(47).txt",
     "sha256": "ce0401343fcbe8431c42217a69216760127457b0e79ab55e38d7d3cc156e8f33",
@@ -32,8 +32,8 @@
     "chars": 889739,
     "file": "src/init.lua (tail after the marker line; feature-module patches applied)",
     "marker": "-- [ EXTRACTED DRIVER BODY — everything below is byte-exact from input/message(47).txt ]",
-    "patched_sha256": "f39a5c01cda7202e1e36f25fd9404869eb4ba5527d941922a5e055a66be679fd",
-    "patched_chars": 762699,
+    "patched_sha256": "ba6f0ec6dfbb4b7c6cf4555bf12e1696deb966bc16f082413f3b3b592a7a7b3b",
+    "patched_chars": 126669,
     "patches": [
       {
         "module": "modules.loading",
@@ -45,10 +45,13 @@
           "RunService",
           "onUnload"
         ],
+        "live": [],
+        "live_reads_rewritten": 0,
         "block_chars": 3169,
         "body_chars": 3135,
         "block_sha256": "f82dde3d7ddaea29eb4e53dfb6c686a75fc6c0260e69f12cd9d297073a153e2d",
         "body_sha256": "e1ea153bc7e8413be6581065bf1b331aa8b9fe70160d7768bc73d5af3551465b",
+        "module_body_sha256": "e1ea153bc7e8413be6581065bf1b331aa8b9fe70160d7768bc73d5af3551465b",
         "module_file_sha256": "1d32e252c9dfee0b24a31f726289333a0b91cb2c0aa337875faafcaf691fc7ea",
         "shim_sha256": "d3797342a22b7f860cd0a693750b5d93d5de820b48b299da71295a97a7429a88"
       },
@@ -61,12 +64,172 @@
           "Notification",
           "Remote"
         ],
+        "live": [],
+        "live_reads_rewritten": 0,
         "block_chars": 761,
         "body_chars": 729,
         "block_sha256": "c42a53d280ec7c77c0ac38dc57693145c2d6c4ba29bc47b968ba6be8d500dc64",
         "body_sha256": "cc00b08c1c03ca312f82abe18427ed5c1da7db5953576a72e3f544318ea63320",
+        "module_body_sha256": "cc00b08c1c03ca312f82abe18427ed5c1da7db5953576a72e3f544318ea63320",
         "module_file_sha256": "7dc4d97cc480dd77f84ee5722df0e51c43a34b4fe89751d906b05cc900e1903c",
         "shim_sha256": "961100e71413273f45965466c70f4bbd264d99785434071574d4ba859432657f"
+      },
+      {
+        "module": "modules.gunchams",
+        "file": "src/modules/gunchams.lua",
+        "guard": "gunchams",
+        "ctx": [
+          "ESP",
+          "INIT_GENERATION",
+          "NeverLose",
+          "Players",
+          "Remote",
+          "Render",
+          "RunService",
+          "Sections",
+          "TAG",
+          "destroyAny",
+          "onUnload",
+          "scanDescendantsAsync"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 3,
+        "block_chars": 18063,
+        "body_chars": 18028,
+        "block_sha256": "3f1a3fc5c8747c354637989214cc2e8792ae132d3a9a65f42dd280480aee0133",
+        "body_sha256": "13f5d84c848af515cab647ab3e01c8b0b844d338a17ca88f6b4d3c5c81e8fbc5",
+        "module_body_sha256": "50951ade6e23965487e88c8e487da9762d9be70ab7901f5740ed52b43134a5e3",
+        "module_file_sha256": "5fdc28e6c251102978310212b6deb911cfc4ec1cb6a77d46833b5dcefb42410a",
+        "shim_sha256": "9f57add6916faab09cc2e07fd7c9840c67fdebb21b25013d8427049781aa2545"
+      },
+      {
+        "module": "modules.preview",
+        "file": "src/modules/preview.lua",
+        "guard": "preview",
+        "ctx": [
+          "ESP",
+          "LocalPlayer",
+          "NeverLose",
+          "Preview",
+          "Remote",
+          "RunService",
+          "S",
+          "Window",
+          "onUnload"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 4,
+        "block_chars": 21582,
+        "body_chars": 21548,
+        "block_sha256": "1d467193dd6d8b23fe829352a060b2e5a87b847a9fde96c2dd9356848f69d9ac",
+        "body_sha256": "69836c88f08c6abdbc035d7acfee6b135046edafb16d1bb72330eb94d6d63ca8",
+        "module_body_sha256": "fa2a3471f85b99d3434697fbe4f03866960bd157abb89852f0c3954b9abee1d6",
+        "module_file_sha256": "6aa09d26b14d28cf16e584d519e2943aa0bdc06feb6ac6bbcacc207379d04197",
+        "shim_sha256": "06d4d0c4d5f9fdac1363dcd66ebf984ded7e178b652101ce977579535cf741f1"
+      },
+      {
+        "module": "modules.shaders",
+        "file": "src/modules/shaders.lua",
+        "guard": "shaders",
+        "ctx": [
+          "ESP",
+          "NeverLose",
+          "Remote",
+          "RunService",
+          "Sections",
+          "onUnload",
+          "recordError"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 5,
+        "block_chars": 25385,
+        "body_chars": 25351,
+        "block_sha256": "c62e9c35613cbdb898932fab46801633c8713389b6eb4cfde3cabb74ae086e5d",
+        "body_sha256": "4efe946b010361ecc266f163ccb6e237b0a2808630be11d6be3cc765ae74647c",
+        "module_body_sha256": "e11c720ad78339909fc50966e382b80e959ffde0fbe6b3350d84f9c880714dd1",
+        "module_file_sha256": "cf45f19932dd53267c5438d4b1c13474d2c7b23681fefaa54478ab0d571b45d7",
+        "shim_sha256": "1e181453af3ddc4472deabc0cbca7c77f9ddd7ba93630615f840d8c7e69d072f"
+      },
+      {
+        "module": "modules.lighting",
+        "file": "src/modules/lighting.lua",
+        "guard": "lighting",
+        "ctx": [
+          "ESP",
+          "NeverLose",
+          "Sections"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 2,
+        "block_chars": 3283,
+        "body_chars": 3248,
+        "block_sha256": "e17f966358ca3637d06afc0ad4935efe946bf8802a0666bd9cff45a43f139bf1",
+        "body_sha256": "a751d59b0ca1dac881734e6209bab4338885ee46a01216dd53f4d236d0539cd7",
+        "module_body_sha256": "bcb747a8235c95dbef20242b07be8754350532fa07cd83eb42d10e999319a5d4",
+        "module_file_sha256": "bd4d4665688bf204e3deed971486e222dd2dcdab51b781529521bc281c134f61",
+        "shim_sha256": "c2f806d6a85ff13334afbd03640524e079c48dc55789a24676c6b3ffff54f08f"
+      },
+      {
+        "module": "modules.gamefx",
+        "file": "src/modules/gamefx.lua",
+        "guard": "gamefx",
+        "ctx": [
+          "ESP",
+          "LocalPlayer",
+          "Remote",
+          "RunService",
+          "onUnload",
+          "recordError",
+          "sethiddenproperty"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 10,
+        "block_chars": 104035,
+        "body_chars": 104002,
+        "block_sha256": "d131b2507c9a2eee4271eddc63c0441dcc3d5484338ce491cb04a6c89dba87c2",
+        "body_sha256": "c7aba0e717195c7d40b9234f2ce96ae5bcd8ee54f1788eba8c664325333f8078",
+        "module_body_sha256": "1597797bf8aac7b849c7fe59232356f53bde74faa7d5fbde554d350a3a9f6784",
+        "module_file_sha256": "ac92a1dda541047db9c27e1a9508fa2643c06b6c79248fdfbbb909de2ac31257",
+        "shim_sha256": "985c1ca419e4238ede3c7d0c3c68e1874100acd6f8afe3ef33b1a329c2a284f5"
+      },
+      {
+        "module": "modules.aura",
+        "file": "src/modules/aura.lua",
+        "guard": "aura",
+        "ctx": [
+          "ESP",
+          "LocalPlayer",
+          "NeverLose",
+          "Preview",
+          "Remote",
+          "Render",
+          "RunService",
+          "Sections",
+          "Visuals",
+          "onUnload",
+          "recordError"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 10,
+        "block_chars": 25092,
+        "body_chars": 25061,
+        "block_sha256": "8f6224fbb304ea75b56b0fb8e3e602b35f8034c5ed1f910a6ed2067fa2a107d6",
+        "body_sha256": "10e80e044526a114ada90d2c80a1d2301bd723a1a9921ffc6fa2353f2da90620",
+        "module_body_sha256": "2db10e9899e717db0f0589109cd7ef6519d7a51647d34c164e168fd2cb7dca69",
+        "module_file_sha256": "4c00fdf232237ceb008e4954b09533dd51b87a40e2836ff0a0ccabb519005a16",
+        "shim_sha256": "790d9f217a3ebc2c7d225971433f83588f06a1eba1e43d0dd7ecb50178c8984f"
       },
       {
         "module": "modules.cosmetics",
@@ -78,12 +241,39 @@
           "Visuals",
           "onUnload"
         ],
+        "live": [],
+        "live_reads_rewritten": 0,
         "block_chars": 3175,
         "body_chars": 3139,
         "block_sha256": "c71e8e89962222c691bfbc010f56ac7cca0509f1617ea52cf87889c5701455f6",
         "body_sha256": "61ef65e46c1be03ff0c7f1b403b8fe7dd8886cebd1780e4bd8e76d7871880627",
+        "module_body_sha256": "61ef65e46c1be03ff0c7f1b403b8fe7dd8886cebd1780e4bd8e76d7871880627",
         "module_file_sha256": "8ccf048bb03595498ccb1d76cfea2d892b5769969b00b5efc1064f3fa2538997",
         "shim_sha256": "33466868706d8c0f66fcf60f2ffb6bad925896177822e952fe79c69a2cefcde9"
+      },
+      {
+        "module": "modules.motiongraph",
+        "file": "src/modules/motiongraph.lua",
+        "guard": "motiongraph",
+        "ctx": [
+          "ESP",
+          "LocalPlayer",
+          "NeverLose",
+          "RunService",
+          "Sections",
+          "destroyAny"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 2,
+        "block_chars": 11597,
+        "body_chars": 11559,
+        "block_sha256": "81b173057d515222d3402bab9e9ecc9876361f7d908d904d8d57bc62cf2ea56b",
+        "body_sha256": "07b7221686a8c07b28752b715a09d9dc1f045c9ccc86b24badd838e6f765dcb8",
+        "module_body_sha256": "c401c17c61fef21335d02cf4097112419ef8d98e6f112c034088ff7595f2d642",
+        "module_file_sha256": "c3234989724cb8c77b7ae96c9720a3d0ff32f29b08a716b60cadc513450eb44e",
+        "shim_sha256": "368ebee1161279615141ebb521ce4722db5e580efbd1137c298e8f7611ba6e4e"
       },
       {
         "module": "modules.backtrack",
@@ -93,12 +283,95 @@
           "ESP",
           "Sections"
         ],
+        "live": [],
+        "live_reads_rewritten": 0,
         "block_chars": 2580,
         "body_chars": 2544,
         "block_sha256": "73139222b790a0c314d96e53938a8ef5cbd3e19c30e6a53e765cf57ec3da29ad",
         "body_sha256": "ca06d9688fadba8409621568ffd306e669412ff8fec74937ffb8f57ab4470394",
+        "module_body_sha256": "ca06d9688fadba8409621568ffd306e669412ff8fec74937ffb8f57ab4470394",
         "module_file_sha256": "bd3134573fd9ced755ade3e7c1e79e06a65880140840975a6010bac2985d987a",
         "shim_sha256": "2abbbdac23398e8fcc2ca830551a0e1276aca741e9754b376e39d68a3aadaef8"
+      },
+      {
+        "module": "modules.backtrack_chams",
+        "file": "src/modules/backtrack_chams.lua",
+        "guard": "backtrack_chams",
+        "ctx": [
+          "ESP",
+          "INIT_GENERATION",
+          "LocalPlayer",
+          "NeverLose",
+          "Players",
+          "RunService",
+          "TAG"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 1,
+        "block_chars": 6789,
+        "body_chars": 6747,
+        "block_sha256": "25d305d193cc27c646cb9896a4daad2a553df27b0290a91facde815302c267f6",
+        "body_sha256": "80edcdd84c9762ebf3ef24d22fab327df7088286945963486c01c7b4055143e2",
+        "module_body_sha256": "aea54d2cf988492d439d6fe735d6efcf23222eff588853922ccec9014b4e67e0",
+        "module_file_sha256": "9f6ad86733a32adf9544a11ad58e85ad54feb18eaed9c040583c84b2b8394a5a",
+        "shim_sha256": "604797b14bcbb38764847c1fdf35d3f5351dfa3e87a408ee2d98f189b6c75827"
+      },
+      {
+        "module": "modules.circles",
+        "file": "src/modules/circles.lua",
+        "guard": "circles",
+        "ctx": [
+          "ESP",
+          "INIT_GENERATION",
+          "LocalPlayer",
+          "NeverLose",
+          "Players",
+          "Remote",
+          "Render",
+          "RunService",
+          "Sections",
+          "TAG",
+          "onUnload"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 9,
+        "block_chars": 23032,
+        "body_chars": 22998,
+        "block_sha256": "a19daf6407902c9c210e5b4211ca4ce7758ef3641a267d7a1ad721df8f696d01",
+        "body_sha256": "25d7ea63d880357a77bca44ee5cffefb486094fda23242b50c0831499f6a8bb4",
+        "module_body_sha256": "79586eb7255794ba7cc079fb7d574358a7350f3a49d00c045ae2168fe61a8fa2",
+        "module_file_sha256": "68969ae8297c719a0cdd088afa55375cffa2638b9cb836604d3822fe1dfdae2e",
+        "shim_sha256": "ed9b54cf4f9a022fee8f16f9f39c67da276afc9c9125af2dc12ecfb7456eca3c"
+      },
+      {
+        "module": "modules.trail",
+        "file": "src/modules/trail.lua",
+        "guard": "trail",
+        "ctx": [
+          "ESP",
+          "LocalPlayer",
+          "NeverLose",
+          "Players",
+          "Remote",
+          "RunService",
+          "Sections",
+          "Visuals"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 4,
+        "block_chars": 22037,
+        "body_chars": 22005,
+        "block_sha256": "e9b46e82ee6b5e4776e5c307920844f806906506663451451b1d953e53bc60c2",
+        "body_sha256": "ec99e478d87949251bd082ef20b70bf5f7fd3fbc079b7bfe4385d6d0142b31cb",
+        "module_body_sha256": "094b184099f9eeb0d1e80fb642c3b9f6b9e5aaa0d247561f78cd0c4020de7e0f",
+        "module_file_sha256": "53bf0d30235fd90ddcb3ad254dbae4337758d4ccc81986b076b577eb3d40c12c",
+        "shim_sha256": "a7d3ae130e7c0abb0436a2c36e7ce70cf12e79be5fe75349d78a75e4f50a8c2b"
       },
       {
         "module": "modules.world_fx_math",
@@ -107,12 +380,259 @@
         "ctx": [
           "ESP"
         ],
+        "live": [],
+        "live_reads_rewritten": 0,
         "block_chars": 3262,
         "body_chars": 3222,
         "block_sha256": "b85e91e21193eff89b6db70e39ab8f24d594c0845aa5c874d4994e4d20752583",
         "body_sha256": "d391ba805e54ff088f0a969c2d643b739086ab4c51de6d890b15211c616c9abf",
+        "module_body_sha256": "d391ba805e54ff088f0a969c2d643b739086ab4c51de6d890b15211c616c9abf",
         "module_file_sha256": "e235822a8d285d83d2ad526742d540bb8926b7dfcd664d0e19577e3b62b0183a",
         "shim_sha256": "fe1af0068810c7e26b2cbf70a30447a52d3a4cc0cb3c53c1646bf0f8fc01c5a6"
+      },
+      {
+        "module": "modules.glyphs",
+        "file": "src/modules/glyphs.lua",
+        "guard": "glyphs",
+        "ctx": [
+          "ESP",
+          "NeverLose",
+          "Preview",
+          "Remote",
+          "Render",
+          "RunService",
+          "Sections",
+          "onUnload"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 1,
+        "block_chars": 11278,
+        "body_chars": 11245,
+        "block_sha256": "f88c4ade4e7a70c41cda5ae3b10bd96805c75cf26547c4310f826e3e22502799",
+        "body_sha256": "b1e9748a3e30b1a0f1f28d3053dcc4945ebe5dcd0a8e5ede7b02b8dfb951a8a2",
+        "module_body_sha256": "d28995cd78c6a7bbeb007f3499f1e0aa3c84841a5f526f4b34062bdf3c8ce299",
+        "module_file_sha256": "941012f5fa8f18c5fe7394accb75c76b0034c2041bd9390051e54437ad6ffd04",
+        "shim_sha256": "58ef8e5309b1ec903c565f508446b4c98bc6b05c3d8f2e61d57f1e8912ca612e"
+      },
+      {
+        "module": "modules.models",
+        "file": "src/modules/models.lua",
+        "guard": "models",
+        "ctx": [
+          "ESP",
+          "INIT_GENERATION",
+          "LocalPlayer",
+          "NeverLose",
+          "Notification",
+          "Remote",
+          "Render",
+          "RunService",
+          "Sections",
+          "TAG",
+          "Visuals",
+          "onUnload",
+          "recordError",
+          "userFile"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 16,
+        "block_chars": 27248,
+        "body_chars": 27215,
+        "block_sha256": "3b2343f0c301a88c5526f3d4f157f122f34468af8db65205cc72261ae5a7f36d",
+        "body_sha256": "a480e0eaa9a948dd8228ae16e26c374522cc91d16a89deac758830ceb7fbf753",
+        "module_body_sha256": "05c0cc6461ac09dd38471b07d12543c5502a557113084ccf39488d57288f033b",
+        "module_file_sha256": "feefd90b72a73e339dd3d242f766880259c91d1be09530923a6f679119f61775",
+        "shim_sha256": "c6c9ad3eb8f429004e6b61fca85e0bf6b08250754c557e973362e6ccc68ee8a1"
+      },
+      {
+        "module": "modules.chinahat",
+        "file": "src/modules/chinahat.lua",
+        "guard": "chinahat",
+        "ctx": [
+          "ESP",
+          "LocalPlayer",
+          "NeverLose",
+          "RunService",
+          "Sections",
+          "destroyAny",
+          "onUnload"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 1,
+        "block_chars": 8693,
+        "body_chars": 8658,
+        "block_sha256": "17f689f0c0d6f28f589cf8691cf0ac04f83443aaf8275d668b6069d2326c30b8",
+        "body_sha256": "8684b65bf51c779c8020a314a4d4a3bb0cfefc56eac2290af11bfcc15861a4d0",
+        "module_body_sha256": "fae4ee2fd59c98fa59314e365a0ecf9b16416d493544bbf86abc6d8f47e0d29f",
+        "module_file_sha256": "36d3b5b21a0ff16b1da9834c33c769a18ee872d4f6421fb8a06bb517aeef1116",
+        "shim_sha256": "048321a60212cbaedc34cac8709179f2a35e51ca08e93666304c0b4ae009dc2d"
+      },
+      {
+        "module": "modules.killfx",
+        "file": "src/modules/killfx.lua",
+        "guard": "killfx",
+        "ctx": [
+          "ESP",
+          "INIT_GENERATION",
+          "LocalPlayer",
+          "NeverLose",
+          "Players",
+          "Sections",
+          "TAG",
+          "onUnload",
+          "scanDescendantsAsync"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 2,
+        "block_chars": 12879,
+        "body_chars": 12846,
+        "block_sha256": "0c3355951eddfb092d2af50052545c53301c01e836dffb2163620610c59d7c5a",
+        "body_sha256": "caea77e4ce926e193038006df64d72bfa4984fbe50814b8b495221e08bdc7ac8",
+        "module_body_sha256": "26a2bca1664bb46a05e718d9954454e6ed1b06de2a4c88ebc7b0618715c883af",
+        "module_file_sha256": "94b9a43f5f33d34a1d43b13c5bb38cf91cb87cd4685da174ff8c07c1254b606f",
+        "shim_sha256": "f11f6589bcbf843f0ac3c3396c9d86d287c6883819be40876dd7649f54ee4e8e"
+      },
+      {
+        "module": "modules.character",
+        "file": "src/modules/character.lua",
+        "guard": "character",
+        "ctx": [
+          "ESP",
+          "INIT_GENERATION",
+          "LocalPlayer",
+          "NeverLose",
+          "Notification",
+          "Remote",
+          "Sections",
+          "TAG",
+          "Visuals",
+          "onUnload",
+          "recordError",
+          "userFile"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 16,
+        "block_chars": 25217,
+        "body_chars": 25181,
+        "block_sha256": "2b64712d3ba9e823b88d1aeb693f50f67197ca9debdc74e1f31be181fb0b61dd",
+        "body_sha256": "755dfa9a07a8194a95287285550c2fa9d14c679941e04b20340311f12bb9af95",
+        "module_body_sha256": "728c6008c4580aa35917af7235cc1983c061fbc1980479b00788ae998f199d30",
+        "module_file_sha256": "234e5d3e4b9d56d0e05a5f9115cc843eac3955f26a8d61cb6e7de2ad961c1e4c",
+        "shim_sha256": "b3340554ada26a23d8149513208db887927dca25a2fd463ed4123a37e9de36d1"
+      },
+      {
+        "module": "modules.combat",
+        "file": "src/modules/combat.lua",
+        "guard": "combat",
+        "ctx": [
+          "ESP",
+          "GLOBAL",
+          "LocalPlayer",
+          "NeverLose",
+          "Players",
+          "Window",
+          "getnamecallmethod",
+          "onUnload",
+          "scanDescendantsAsync"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 1,
+        "block_chars": 12464,
+        "body_chars": 12431,
+        "block_sha256": "c152f58b138cf6cb33630ad382d297855f7c52e98d5e6f9540f17aa4bd1944f6",
+        "body_sha256": "115136de6a12b1bba1b14e5ddb3d0851418dd02811cdef2659d38e5167173b59",
+        "module_body_sha256": "f2c5fa1b8596bf8f2658c7e965cacee8e0c876533fab5798ddb9a38e110423c0",
+        "module_file_sha256": "dd6f4d29057b62115bce7acc0d6a1dd734889bda2d8e1bede5e851e0e12f6aeb",
+        "shim_sha256": "05499a742c17b0bff273c05127c0eacc4720e91ec6c5a646334c757a7387a744"
+      },
+      {
+        "module": "modules.bullet_tracers",
+        "file": "src/modules/bullet_tracers.lua",
+        "guard": "bullet tracers",
+        "ctx": [
+          "ESP",
+          "LocalPlayer",
+          "NeverLose",
+          "Remote",
+          "Sections",
+          "onUnload"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 4,
+        "block_chars": 7291,
+        "body_chars": 7250,
+        "block_sha256": "0f5c7683f3d9faa2c508bc32a2791ff87452108887f5184392cf8e6900e56ef2",
+        "body_sha256": "f242e355a46b42d9615f62127033f2d48de5981d69d39dd3cd7c56790499b693",
+        "module_body_sha256": "bd107eea1d99a442c68273b54fd7771aad4f750f8371353b32f7b3d6456820fc",
+        "module_file_sha256": "61219d1d37575ca8f14afc466bbfe000b50425c3cd38b143d30bfa95b4e9afc9",
+        "shim_sha256": "c2d534e29d10e44ba8e9220d0b274a61bea0eb67d1f8f6eddbb110d7f322b785"
+      },
+      {
+        "module": "modules.constellations",
+        "file": "src/modules/constellations.lua",
+        "guard": "constellations",
+        "ctx": [
+          "ESP",
+          "INIT_GENERATION",
+          "NeverLose",
+          "Remote",
+          "Render",
+          "RunService",
+          "Sections",
+          "TAG",
+          "onUnload"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 1,
+        "block_chars": 54039,
+        "body_chars": 53998,
+        "block_sha256": "e0941ce9c6844a6c3d6322b2dc2192053bee545da312a6a9eec8032f010c41a1",
+        "body_sha256": "a684de9fb12c4b2e55d8a805d7929004df2cd978a4dd503d530b30134c5fefb6",
+        "module_body_sha256": "ec32b3f3718452e690923233cbb07c40c34f6c7817945455b552d0b46f299703",
+        "module_file_sha256": "db8ec12bf9d07b12fca3815221cd1aeca4c14a81003af888c69ff95e22d1c3f1",
+        "shim_sha256": "8b4a1f8330368d6a49926f6227e531c2a60220cdd77730e33a73209c2b64a62c"
+      },
+      {
+        "module": "modules.starfall",
+        "file": "src/modules/starfall.lua",
+        "guard": "starfall",
+        "ctx": [
+          "ESP",
+          "INIT_GENERATION",
+          "Remote",
+          "Render",
+          "RunService",
+          "Sections",
+          "TAG",
+          "onUnload"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 4,
+        "block_chars": 11472,
+        "body_chars": 11437,
+        "block_sha256": "22303a460e72843c9bd6c4beb1c3a173fef99c40959fe98d306f46f5f15f639a",
+        "body_sha256": "88fdabf6b169202ef5278efee6bbd77f186c45b6af9cde433e1ee91c77c4c7c2",
+        "module_body_sha256": "74106655bdfb8cf5a868a803c9644e41bcd3c159f92484a285f4c7fbad356aaf",
+        "module_file_sha256": "1852da56fe50c20cd375dc41786cf598f085546b5b82515c7771c1052fe5314e",
+        "shim_sha256": "9987b344210fabfc96ab61d3ca0ad2a5ae1096ba51ac4ea3e69877e10181f334"
       },
       {
         "module": "modules.weather",
@@ -127,12 +647,94 @@
           "Sections",
           "TAG"
         ],
+        "live": [],
+        "live_reads_rewritten": 0,
         "block_chars": 9409,
         "body_chars": 9375,
         "block_sha256": "8f82f523b92e48d7852bc3f9a9ddb505b842c3f3b140a4fa530538554c7d7e26",
         "body_sha256": "9546835acee90aa1f932d44ec8e8e0c6f090cde9005433a21c712eea90c3ba77",
+        "module_body_sha256": "9546835acee90aa1f932d44ec8e8e0c6f090cde9005433a21c712eea90c3ba77",
         "module_file_sha256": "eca153d37dc356aa36d8c54990440c4a8e37dd8d0e90020c89aac52b1efe8856",
         "shim_sha256": "1382100f010bd44ebd10b058a5f5f996dc238270556649646dd3e3ecb890914a"
+      },
+      {
+        "module": "modules.crosshair",
+        "file": "src/modules/crosshair.lua",
+        "guard": "crosshair",
+        "ctx": [
+          "ESP",
+          "GLOBAL",
+          "LocalPlayer",
+          "NeverLose",
+          "RunService",
+          "Sections",
+          "destroyAny",
+          "onUnload"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 6,
+        "block_chars": 12118,
+        "body_chars": 12082,
+        "block_sha256": "c6ec2920a94eda3fdf0eb66278bc98ef4407bf6915f5ed812ab1babebe545e47",
+        "body_sha256": "eba931e995bbf5dd5882c98da72ac09739768b1dfe7925442f5d824216350871",
+        "module_body_sha256": "b1e2fb1e865101087030f851f2f892932ec60cc1625acac567c7129c74a20d1b",
+        "module_file_sha256": "7de8f4b6668e567c48b54effe756df252abe1d7ca241faba2422811ae0eb4807",
+        "shim_sha256": "5a0d10928fde40f203256b43ac49815b58e8b5724e5cdef22b3bf5f05eff2897"
+      },
+      {
+        "module": "modules.animations",
+        "file": "src/modules/animations.lua",
+        "guard": "animations",
+        "ctx": [
+          "ESP",
+          "LocalPlayer",
+          "MiscGroup",
+          "NeverLose",
+          "Notification",
+          "Remote",
+          "RunService",
+          "Sections",
+          "USER_DATA",
+          "Window",
+          "onUnload",
+          "userFile"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 3,
+        "block_chars": 40825,
+        "body_chars": 40788,
+        "block_sha256": "319063f8008f9f9f258f41d17964d6a0547c31d39d6363772c6a32842365260e",
+        "body_sha256": "c8d9c6ab01685e2d251d490e8d3ac4d0cc0a5de8f8b0e85ddd57d4bdc11fd638",
+        "module_body_sha256": "d2b9d2031193484577e7504564c02a0c21b2a0c9aff18d27616ffd61782abaa6",
+        "module_file_sha256": "e9b4345f5e8c2f852538d89205722fd4ae1dbebaf08246ce39e7235098d84570",
+        "shim_sha256": "5f4c0bfc181c9f0f6d1ba157ad47bd1fdfad43a04243d82449fa899bba9e7ed9"
+      },
+      {
+        "module": "modules.camera",
+        "file": "src/modules/camera.lua",
+        "guard": "camera",
+        "ctx": [
+          "ESP",
+          "Render",
+          "RunService",
+          "Sections",
+          "onUnload"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 1,
+        "block_chars": 1628,
+        "body_chars": 1595,
+        "block_sha256": "5e306cb8d5f46ba00f10345977399a7336009d9b2090f3cd7562fced1907b052",
+        "body_sha256": "ca05bf15f7fb32fd58ee5b4618a8a67a21a48acb7c08da027756bb63493602e5",
+        "module_body_sha256": "8e9e05d7c2dc1af1c9be568827f615a3f62f6253b4678c4a077b1d801b61955f",
+        "module_file_sha256": "c5dfde461e770a232b0494cec364150a2686c8530fe599b84e40b7cc4260d96e",
+        "shim_sha256": "56b0afca3cc94a0e6c9ab4c2f5677a19ec4dada1431d9b71005535c3ef7d3199"
       },
       {
         "module": "modules.misc",
@@ -148,10 +750,13 @@
           "Sections",
           "onUnload"
         ],
+        "live": [],
+        "live_reads_rewritten": 0,
         "block_chars": 28280,
         "body_chars": 28249,
         "block_sha256": "7ba5b97ec96df3e4490e29fa3a0aed9747e562d015071f8f498fd66a0c9e925e",
         "body_sha256": "18e3451924f6c16155fbed6dd5ec99fb2ae0ce946edcd0dbe088cbb549bdc1f9",
+        "module_body_sha256": "18e3451924f6c16155fbed6dd5ec99fb2ae0ce946edcd0dbe088cbb549bdc1f9",
         "module_file_sha256": "97f2e841171f4a1cc1a41daf28b24032304422668953f967a96b20341c183ad2",
         "shim_sha256": "f637ab05e0cca98c6373acb8f09db1c7ba1e3052f97fd7ec1564549b6192f320"
       },
@@ -166,10 +771,13 @@
           "Sections",
           "onUnload"
         ],
+        "live": [],
+        "live_reads_rewritten": 0,
         "block_chars": 5150,
         "body_chars": 5116,
         "block_sha256": "d14d2d515f678918157e7efb7873c049aa48a09abaa47552445868f9e80ab606",
         "body_sha256": "eeca24d0e14951a60153297f52e01e1682f05742d542e1b98cdf6f6481292a7d",
+        "module_body_sha256": "eeca24d0e14951a60153297f52e01e1682f05742d542e1b98cdf6f6481292a7d",
         "module_file_sha256": "dcc907c34788cd1086bd6c3e40ca74186c6b4e52eafc358a9e5246089d65c74c",
         "shim_sha256": "c502c2a2cf7beea5f38ea8d2288059b3788df35011750c96a835270fce3cd763"
       },
@@ -187,10 +795,13 @@
           "Sections",
           "onUnload"
         ],
+        "live": [],
+        "live_reads_rewritten": 0,
         "block_chars": 16891,
         "body_chars": 16858,
         "block_sha256": "c28649d0b06dd63b966919b12dd1fca677b263c451ee24de4780e3a46b096e68",
         "body_sha256": "4b8b634b7454b1a73b3166254240ee91c8b28a6a9d046f719f2df9a5016f8005",
+        "module_body_sha256": "4b8b634b7454b1a73b3166254240ee91c8b28a6a9d046f719f2df9a5016f8005",
         "module_file_sha256": "187c34e12df2ea1e271430b7ad6c3c1f9c3e3c44fcd7c48150915ffaae9e64ff",
         "shim_sha256": "9fda87e212d24f319f625402697de14cfefc32aafce0ecffc99c7ba025eaccc2"
       },
@@ -204,10 +815,13 @@
           "Sections",
           "onUnload"
         ],
+        "live": [],
+        "live_reads_rewritten": 0,
         "block_chars": 5858,
         "body_chars": 5824,
         "block_sha256": "410907f760f36084156425f72236eccaabf9f32dbadb37a21e35f0ae30ad7d91",
         "body_sha256": "764e54705b587928dbef71ae33a9c1c8b264d4c4fb1c9cd9a27683732c8ee4d0",
+        "module_body_sha256": "764e54705b587928dbef71ae33a9c1c8b264d4c4fb1c9cd9a27683732c8ee4d0",
         "module_file_sha256": "41ee91708ea8e6c3bd1a91d3df72d7ad67d65c79908afc30c2949ee9c52c781b",
         "shim_sha256": "186cbd84d1e8acce609fba2c91d9b4468a87dad4ae86ad95ea85cce2c962550f"
       },
@@ -224,10 +838,13 @@
           "Sections",
           "onUnload"
         ],
+        "live": [],
+        "live_reads_rewritten": 0,
         "block_chars": 8594,
         "body_chars": 8561,
         "block_sha256": "37d724acf3c3117ee00a67a2a9c2399b68c04a3e549d554df67d20b89f9792e1",
         "body_sha256": "1326607f9fa97214dc8e1fa119956aad71889bef02db7fc6e354a321798fcbcb",
+        "module_body_sha256": "1326607f9fa97214dc8e1fa119956aad71889bef02db7fc6e354a321798fcbcb",
         "module_file_sha256": "db93291885c3ab972d2c071218c9d656b9ae5de344aa4d80aaff4daf1eeef316",
         "shim_sha256": "47076a253ebbf9f897ff7c70cffda44fc522f8a82a2e2715afdfecfb006c97ec"
       },
@@ -243,10 +860,13 @@
           "fluxus",
           "http"
         ],
+        "live": [],
+        "live_reads_rewritten": 0,
         "block_chars": 20539,
         "body_chars": 20507,
         "block_sha256": "05b4c9e8b5c42851476aeee4e17d3e80d26cfa99fccad943ba3bcac2fd76d4a8",
         "body_sha256": "f38836caca548169ea22db3f93b827058034f63e323cce230cae53960ca1d085",
+        "module_body_sha256": "f38836caca548169ea22db3f93b827058034f63e323cce230cae53960ca1d085",
         "module_file_sha256": "b167cf5b402a0c70a21ef592e19bf8efd42d19cac5f81f213b14777037c162ec",
         "shim_sha256": "9e85219ef5722de0c070245582370101aeb643726ce5c05ffecdb08f0664c0cb"
       },
@@ -265,12 +885,102 @@
           "Window",
           "ownedSound"
         ],
+        "live": [],
+        "live_reads_rewritten": 0,
         "block_chars": 21144,
         "body_chars": 21113,
         "block_sha256": "6b76ffa6bcb36405f33a8a0f9b6993891d82c4ed8c61ef96672abe430e1d4c59",
         "body_sha256": "2d2762cb58ce0ce67eecd65966cf8fd0b5659fcd08437c6ae0b67130de3fb2ea",
+        "module_body_sha256": "2d2762cb58ce0ce67eecd65966cf8fd0b5659fcd08437c6ae0b67130de3fb2ea",
         "module_file_sha256": "614370a41abd9f0a1f3f67ee63925828d822ac21cb74bb04b9b54ddeabcada97",
         "shim_sha256": "6d99931ce03a168bb0ed2288130adf99ab60c2cf2192deba1ca7f2a49056fff1"
+      },
+      {
+        "module": "modules.music",
+        "file": "src/modules/music.lua",
+        "guard": "music",
+        "ctx": [
+          "ESP",
+          "GLOBAL",
+          "NeverLose",
+          "Notification",
+          "Remote",
+          "Render",
+          "RunService",
+          "Sections",
+          "http",
+          "onUnload",
+          "userFile"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 9,
+        "block_chars": 73604,
+        "body_chars": 73572,
+        "block_sha256": "0b6e8fbcd538f117d58f4e60d3a74d50f8dca13481b1b345467d646280575220",
+        "body_sha256": "6a1e82cdc2e17ae0f0456a3d1a14db81d66c0633c81e6dad0184c55c6103a2c4",
+        "module_body_sha256": "a641d4a791ed47f3c84efe7ea789a1e9fd61297c6da446894718a8a37fabca8d",
+        "module_file_sha256": "d20002b851727b01ec731fe5a21cd382ca5bc459ad25cbc8aa8dd2d1c66d9ce8",
+        "shim_sha256": "dc8a158537799d83b475ba0e9ed2d9cfc7a7dc08fe2fcd4e780f7b3082f347ed"
+      },
+      {
+        "module": "modules.assets",
+        "file": "src/modules/assets.lua",
+        "guard": "assets",
+        "ctx": [
+          "ESP",
+          "GLOBAL",
+          "LocalPlayer",
+          "NeverLose",
+          "Notification",
+          "Remote",
+          "Sections",
+          "onUnload",
+          "ownedSound",
+          "scanDescendantsAsync"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 9,
+        "block_chars": 24916,
+        "body_chars": 24883,
+        "block_sha256": "680545dd73c32be9fc17e5f38406f70dc1447a0ee0f4f424c3cd366dbf95b483",
+        "body_sha256": "bf1a845dd4d61537b62a079f103a7ebb3d2aa5c3b9af03fd189a72885643df1f",
+        "module_body_sha256": "ac57c36518f775f774ca552f492d3d6bf826681fe8798bbae6bda415ebbfe4f9",
+        "module_file_sha256": "593a97f7e459ff6f0afe2c2709d4aa36c5ecd0363e9afe6d5c64b8c33ace4791",
+        "shim_sha256": "e4e087ba58e91252ef919aa53ef41000eefe84766075ec845ce2cc2003c295c5"
+      },
+      {
+        "module": "modules.social",
+        "file": "src/modules/social.lua",
+        "guard": "social",
+        "ctx": [
+          "ESP",
+          "LocalPlayer",
+          "NeverLose",
+          "Players",
+          "Remote",
+          "RunService",
+          "Tabs",
+          "Window",
+          "gethwid",
+          "http",
+          "onUnload",
+          "userFile"
+        ],
+        "live": [
+          "ALIVE"
+        ],
+        "live_reads_rewritten": 6,
+        "block_chars": 62413,
+        "body_chars": 62380,
+        "block_sha256": "a517df7cdb60a43a33ccc95e5ea3cb5f505d3f653d19ea59b352d6f0869c29ff",
+        "body_sha256": "d0fe0137dbd55e1e98241dba25c866c085f370227b1e2fb7d8c8119c0d156ef2",
+        "module_body_sha256": "257a04a205c09f8874f188ad2df20f82d11b4a983d909d17632a5c8f0feedcd1",
+        "module_file_sha256": "faf2a658037a3189f39c183d16b28b349f36e694b8e4af937175f9a150e21f4d",
+        "shim_sha256": "62f73450e891332785f93ff6083e1c3b0f6350936205a413e5e95e5a39ee880e"
       },
       {
         "module": "modules.config",
@@ -282,10 +992,13 @@
           "Window",
           "userFile"
         ],
+        "live": [],
+        "live_reads_rewritten": 0,
         "block_chars": 2504,
         "body_chars": 2471,
         "block_sha256": "02cd07a9ce010f63e4c95e9f8d03264a3d54718585cbcd166965dceaea9231b3",
         "body_sha256": "5f6f7ee141f0a1a1ed22d19506ecb3336134e288745040deb02ae72a02f87a18",
+        "module_body_sha256": "5f6f7ee141f0a1a1ed22d19506ecb3336134e288745040deb02ae72a02f87a18",
         "module_file_sha256": "1b26d2e623e300249f02967ea24ba0d8f14c4b858734b2d8ad7e4d8c0cc04493",
         "shim_sha256": "95a28785d16af2331864e3923dd44cbe307f0b06bc48e4770f3ef096e81a0db7"
       }

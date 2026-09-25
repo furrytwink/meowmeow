@@ -49,7 +49,7 @@ MARKER = "-- [ EXTRACTED DRIVER BODY — everything below is byte-exact from inp
 # Feature modules — guard() blocks extracted from the driver into src/modules/.
 #
 # The original block is a closure over driver locals; the derived module is
-#     return function(ctx) <byte-frozen callback body> end
+#     return function(ctx) <callback body> end
 # and the driver re-enters it via
 #     guard("<guard>", function()
 #         return require("<module>")({ <ctx fields> });
@@ -61,15 +61,27 @@ MARKER = "-- [ EXTRACTED DRIVER BODY — everything below is byte-exact from inp
 # `end);` via scripts/lualex.py (no reliance on the next guard's position).
 #
 # `ctx` per block is audited by scripts/plan_feature_modules.py, which for
-# every driver guard() block computes the exact free-variable set with a
-# scope-aware Lua parser, cross-checks it against luau-analyze, rejects blocks
-# that ASSIGN to a driver-local upvalue or use `...` in callback scope, and
-# verifies no ctx name is reassigned later in the driver. A value-bound ctx
-# reproduces upvalue reads exactly only under those conditions.
+# every driver guard() block computes the exact free-variable set with the
+# scope-aware parser in scripts/luascopes.py, cross-checks it against
+# luau-analyze, rejects blocks that ASSIGN to a driver-local upvalue or use
+# `...` in callback scope, and verifies no ctx name is reassigned later in the
+# driver. A value-bound ctx reproduces upvalue reads exactly under those
+# conditions.
 #
-# The 25 guard blocks NOT listed here all read the driver's `ALIVE` flag,
-# which the Unload function flips to false; a ctx copy would freeze it true
-# and change unload behavior, so those blocks stay inline (byte-exact).
+# LIVE GETTERS — all 39 top-level guard() blocks are extracted. 25 of them
+# read the driver's mutable ALIVE flag (`local ALIVE = true` at the top of the
+# driver; Unload() flips it to false). A ctx VALUE copy would freeze it true
+# and change unload behavior, so for those blocks (spec["live"] = ["ALIVE"]):
+#   * the driver passes a LIVE GETTER closing over the real upvalue:
+#         __ALIVE = function() return ALIVE end
+#   * every free READ of ALIVE in the body is rewritten to __ALIVE() by
+#     rewrite_live_reads() using luascopes' scope-resolved byte spans —
+#     strings, comments, field/method names, table-constructor keys and
+#     shadowed locals are never touched, and a getter call returns the
+#     driver's CURRENT value, i.e. exact upvalue semantics.
+# The original body slice stays hash-tied to the input (body_sha256); the
+# rewritten module body is a deterministic pure function of that slice
+# (module_body_sha256), re-derived on every build.
 # ---------------------------------------------------------------------------
 
 FEATURE_MODULES = [
@@ -88,11 +100,74 @@ FEATURE_MODULES = [
         "summary": "social links panel",
     },
     {
+        "module": "modules.gunchams",
+        "file": "src/modules/gunchams.lua",
+        "guard": "gunchams",
+        "ctx": ["ESP", "INIT_GENERATION", "NeverLose", "Players", "Remote", "Render",
+                "RunService", "Sections", "TAG", "destroyAny", "onUnload",
+                "scanDescendantsAsync"],
+        "live": ["ALIVE"],
+        "summary": "gun chams feature",
+    },
+    {
+        "module": "modules.preview",
+        "file": "src/modules/preview.lua",
+        "guard": "preview",
+        "ctx": ["ESP", "LocalPlayer", "NeverLose", "Preview", "Remote", "RunService",
+                "S", "Window", "onUnload"],
+        "live": ["ALIVE"],
+        "summary": "preview viewport feature",
+    },
+    {
+        "module": "modules.shaders",
+        "file": "src/modules/shaders.lua",
+        "guard": "shaders",
+        "ctx": ["ESP", "NeverLose", "Remote", "RunService", "Sections", "onUnload",
+                "recordError"],
+        "live": ["ALIVE"],
+        "summary": "shaders feature",
+    },
+    {
+        "module": "modules.lighting",
+        "file": "src/modules/lighting.lua",
+        "guard": "lighting",
+        "ctx": ["ESP", "NeverLose", "Sections"],
+        "live": ["ALIVE"],
+        "summary": "lighting feature",
+    },
+    {
+        "module": "modules.gamefx",
+        "file": "src/modules/gamefx.lua",
+        "guard": "gamefx",
+        "ctx": ["ESP", "LocalPlayer", "Remote", "RunService", "onUnload",
+                "recordError", "sethiddenproperty"],
+        "live": ["ALIVE"],
+        "summary": "game FX feature",
+    },
+    {
+        "module": "modules.aura",
+        "file": "src/modules/aura.lua",
+        "guard": "aura",
+        "ctx": ["ESP", "LocalPlayer", "NeverLose", "Preview", "Remote", "Render",
+                "RunService", "Sections", "Visuals", "onUnload", "recordError"],
+        "live": ["ALIVE"],
+        "summary": "aura feature",
+    },
+    {
         "module": "modules.cosmetics",
         "file": "src/modules/cosmetics.lua",
         "guard": "cosmetics",
         "ctx": ["ESP", "Sections", "Visuals", "onUnload"],
         "summary": "cosmetics feature",
+    },
+    {
+        "module": "modules.motiongraph",
+        "file": "src/modules/motiongraph.lua",
+        "guard": "motiongraph",
+        "ctx": ["ESP", "LocalPlayer", "NeverLose", "RunService", "Sections",
+                "destroyAny"],
+        "live": ["ALIVE"],
+        "summary": "motion graph feature",
     },
     {
         "module": "modules.backtrack",
@@ -102,6 +177,33 @@ FEATURE_MODULES = [
         "summary": "backtrack feature",
     },
     {
+        "module": "modules.backtrack_chams",
+        "file": "src/modules/backtrack_chams.lua",
+        "guard": "backtrack_chams",
+        "ctx": ["ESP", "INIT_GENERATION", "LocalPlayer", "NeverLose", "Players",
+                "RunService", "TAG"],
+        "live": ["ALIVE"],
+        "summary": "backtrack chams feature",
+    },
+    {
+        "module": "modules.circles",
+        "file": "src/modules/circles.lua",
+        "guard": "circles",
+        "ctx": ["ESP", "INIT_GENERATION", "LocalPlayer", "NeverLose", "Players",
+                "Remote", "Render", "RunService", "Sections", "TAG", "onUnload"],
+        "live": ["ALIVE"],
+        "summary": "hitbox circles feature",
+    },
+    {
+        "module": "modules.trail",
+        "file": "src/modules/trail.lua",
+        "guard": "trail",
+        "ctx": ["ESP", "LocalPlayer", "NeverLose", "Players", "Remote", "RunService",
+                "Sections", "Visuals"],
+        "live": ["ALIVE"],
+        "summary": "weapon trail feature",
+    },
+    {
         "module": "modules.world_fx_math",
         "file": "src/modules/world_fx_math.lua",
         "guard": "world_fx_math",
@@ -109,11 +211,121 @@ FEATURE_MODULES = [
         "summary": "world FX math helpers",
     },
     {
+        "module": "modules.glyphs",
+        "file": "src/modules/glyphs.lua",
+        "guard": "glyphs",
+        "ctx": ["ESP", "NeverLose", "Preview", "Remote", "Render", "RunService",
+                "Sections", "onUnload"],
+        "live": ["ALIVE"],
+        "summary": "glyphs feature",
+    },
+    {
+        "module": "modules.models",
+        "file": "src/modules/models.lua",
+        "guard": "models",
+        "ctx": ["ESP", "INIT_GENERATION", "LocalPlayer", "NeverLose", "Notification",
+                "Remote", "Render", "RunService", "Sections", "TAG", "Visuals",
+                "onUnload", "recordError", "userFile"],
+        "live": ["ALIVE"],
+        "summary": "models feature",
+    },
+    {
+        "module": "modules.chinahat",
+        "file": "src/modules/chinahat.lua",
+        "guard": "chinahat",
+        "ctx": ["ESP", "LocalPlayer", "NeverLose", "RunService", "Sections",
+                "destroyAny", "onUnload"],
+        "live": ["ALIVE"],
+        "summary": "chinahat feature",
+    },
+    {
+        "module": "modules.killfx",
+        "file": "src/modules/killfx.lua",
+        "guard": "killfx",
+        "ctx": ["ESP", "INIT_GENERATION", "LocalPlayer", "NeverLose", "Players",
+                "Sections", "TAG", "onUnload", "scanDescendantsAsync"],
+        "live": ["ALIVE"],
+        "summary": "kill effects feature",
+    },
+    {
+        "module": "modules.character",
+        "file": "src/modules/character.lua",
+        "guard": "character",
+        "ctx": ["ESP", "INIT_GENERATION", "LocalPlayer", "NeverLose", "Notification",
+                "Remote", "Sections", "TAG", "Visuals", "onUnload", "recordError",
+                "userFile"],
+        "live": ["ALIVE"],
+        "summary": "character feature",
+    },
+    {
+        "module": "modules.combat",
+        "file": "src/modules/combat.lua",
+        "guard": "combat",
+        "ctx": ["ESP", "GLOBAL", "LocalPlayer", "NeverLose", "Players", "Window",
+                "getnamecallmethod", "onUnload", "scanDescendantsAsync"],
+        "live": ["ALIVE"],
+        "summary": "combat feature",
+    },
+    {
+        "module": "modules.bullet_tracers",
+        "file": "src/modules/bullet_tracers.lua",
+        "guard": "bullet tracers",
+        "ctx": ["ESP", "LocalPlayer", "NeverLose", "Remote", "Sections", "onUnload"],
+        "live": ["ALIVE"],
+        "summary": "bullet tracers feature",
+    },
+    {
+        "module": "modules.constellations",
+        "file": "src/modules/constellations.lua",
+        "guard": "constellations",
+        "ctx": ["ESP", "INIT_GENERATION", "NeverLose", "Remote", "Render",
+                "RunService", "Sections", "TAG", "onUnload"],
+        "live": ["ALIVE"],
+        "summary": "constellations feature",
+    },
+    {
+        "module": "modules.starfall",
+        "file": "src/modules/starfall.lua",
+        "guard": "starfall",
+        "ctx": ["ESP", "INIT_GENERATION", "Remote", "Render", "RunService",
+                "Sections", "TAG", "onUnload"],
+        "live": ["ALIVE"],
+        "summary": "starfall feature",
+    },
+    {
         "module": "modules.weather",
         "file": "src/modules/weather.lua",
         "guard": "weather",
-        "ctx": ["ESP", "INIT_GENERATION", "NeverLose", "Render", "RunService", "Sections", "TAG"],
+        "ctx": ["ESP", "INIT_GENERATION", "NeverLose", "Render", "RunService",
+                "Sections", "TAG"],
         "summary": "weather effects feature",
+    },
+    {
+        "module": "modules.crosshair",
+        "file": "src/modules/crosshair.lua",
+        "guard": "crosshair",
+        "ctx": ["ESP", "GLOBAL", "LocalPlayer", "NeverLose", "RunService",
+                "Sections", "destroyAny", "onUnload"],
+        "live": ["ALIVE"],
+        "summary": "crosshair feature",
+    },
+    {
+        "module": "modules.animations",
+        "file": "src/modules/animations.lua",
+        "guard": "animations",
+        "ctx": ["ESP", "LocalPlayer", "MiscGroup", "NeverLose", "Notification",
+                "Remote", "RunService", "Sections", "USER_DATA", "Window",
+                "onUnload", "userFile"],
+        "live": ["ALIVE"],
+        "summary": "animations feature",
+    },
+    {
+        "module": "modules.camera",
+        "file": "src/modules/camera.lua",
+        "guard": "camera",
+        "ctx": ["ESP", "Render", "RunService", "Sections", "onUnload"],
+        "live": ["ALIVE"],
+        "summary": "camera feature",
     },
     {
         "module": "modules.misc",
@@ -167,6 +379,33 @@ FEATURE_MODULES = [
         "ctx": ["ESP", "NeverLose", "Notification", "Preview", "Remote", "RunService",
                 "Sections", "Window", "ownedSound"],
         "summary": "menu / UI wiring feature",
+    },
+    {
+        "module": "modules.music",
+        "file": "src/modules/music.lua",
+        "guard": "music",
+        "ctx": ["ESP", "GLOBAL", "NeverLose", "Notification", "Remote", "Render",
+                "RunService", "Sections", "http", "onUnload", "userFile"],
+        "live": ["ALIVE"],
+        "summary": "music feature",
+    },
+    {
+        "module": "modules.assets",
+        "file": "src/modules/assets.lua",
+        "guard": "assets",
+        "ctx": ["ESP", "GLOBAL", "LocalPlayer", "NeverLose", "Notification", "Remote",
+                "Sections", "onUnload", "ownedSound", "scanDescendantsAsync"],
+        "live": ["ALIVE"],
+        "summary": "assets feature",
+    },
+    {
+        "module": "modules.social",
+        "file": "src/modules/social.lua",
+        "guard": "social",
+        "ctx": ["ESP", "LocalPlayer", "NeverLose", "Players", "Remote", "RunService",
+                "Tabs", "Window", "gethwid", "http", "onUnload", "userFile"],
+        "live": ["ALIVE"],
+        "summary": "social feature",
     },
     {
         "module": "modules.config",
@@ -258,22 +497,92 @@ def find_unique(text: str, needle: str, where: str) -> int:
     return hits[0]
 
 
+def rewrite_live_reads(body: str, live: list[str], where: str) -> tuple[str, int]:
+    """Rewrite every free READ of `live` names in a guard body to a getter call.
+
+    luascopes.analyze_body resolves each identifier through the block's lexical
+    scopes, so the recorded spans are exactly the upvalue reads the original
+    callback performed: strings, comments, suffix field/method names
+    (X.<name>, X:<name>), string keys (X["<name>"]), table-constructor keys
+    ({<name> = ...}) and shadowed locals are never touched. Spans are replaced
+    back-to-front; the result is a deterministic pure function of the body.
+
+    Returns (rewritten_body, number_of_reads_rewritten).
+    """
+    import lualex  # scripts/ is on sys.path when extract.py runs
+    import luascopes
+
+    res = luascopes.analyze_body(body)
+    for name in live:
+        if name in res["writes"]:
+            raise ExtractionError(
+                f"{where}: live var {name} is ASSIGNED inside the block — a getter "
+                "cannot reproduce the write-back; the block must stay inline")
+        getter = f"__{name}"
+        if any(t.kind == "name" and t.text == getter for t in lualex.lex(body)):
+            raise ExtractionError(
+                f"{where}: identifier {getter} already exists in the block — "
+                "getter name collision")
+    out = body
+    total = 0
+    for name in live:
+        spans = res["read_spans"].get(name, [])
+        for s, e in sorted(spans, reverse=True):
+            if out[s:e] != name:
+                raise ExtractionError(
+                    f"{where}: span alignment error rewriting {name} "
+                    f"(body[{s}:{e}] = {out[s:e]!r})")
+            out = out[:s] + f"__{name}()" + out[e:]
+        total += len(spans)
+    if total == 0:
+        raise ExtractionError(
+            f"{where}: live var(s) {live} declared but never read — drop the live entry")
+    return out, total
+
+
 def build_feature_module_text(spec: dict, body: str) -> str:
-    """Derive src/modules/<name>.lua: ctx factory + byte-frozen callback body."""
+    """Derive src/modules/<name>.lua: ctx factory + frozen callback body.
+
+    `body` is the module body: the byte-frozen original slice for value-only
+    blocks, or the deterministic live-read rewrite for blocks with spec["live"].
+    """
     nl = "\r\n"  # the driver is CRLF; keep the derived module consistent
+    live = spec.get("live", [])
     ctx_locals = "".join(f"\tlocal {name} = ctx.{name};{nl}" for name in spec["ctx"])
+    live_locals = "".join(f"\tlocal __{name} = ctx.__{name};{nl}" for name in live)
     ctx_inline = ", ".join(f"{name} = {name}" for name in spec["ctx"])
+    if live:
+        ctx_inline += ", " + ", ".join(
+            f"__{name} = function() return {name} end" for name in live)
+    frozen_note = (
+        f"\tcallback body of guard(\"{spec['guard']}\") in the driver — byte-frozen original{nl}"
+        f"\tcode below the marker (re-derived on every `make extract`; do not hand-edit).{nl}"
+        if not live else
+        f"\tcallback body of guard(\"{spec['guard']}\") in the driver — original code below{nl}"
+        f"\tthe marker with reads of ALIVE rewritten to __ALIVE() (re-derived on every{nl}"
+        f"\t`make extract`; do not hand-edit).{nl}"
+    )
+    mechanics = (
+        f"\tThe block originally closed over driver locals; the driver now passes them{nl}"
+        f"\tin via the ctx table:{nl}"
+        if not live else
+        f"\tThe block closed over the driver's mutable ALIVE flag, which Unload() flips{nl}"
+        f"\tto false — a ctx VALUE copy would freeze it true and break unload. ALIVE is{nl}"
+        f"\ttherefore passed as a LIVE GETTER (not a value) and every free read of{nl}"
+        f"\tALIVE in the body is rewritten to __ALIVE(), which returns the driver's{nl}"
+        f"\tCURRENT value — upvalue semantics preserved exactly. The rewrite is done{nl}"
+        f"\tby scripts/luascopes.py (scope-resolved byte spans): strings, comments,{nl}"
+        f"\tfield/method names, table keys and shadowed locals are never touched.{nl}"
+    )
     header = (
         f"--!nonstrict{nl}"
         f"--[[{nl}"
         f"\t{Path(spec['file']).name} — extracted feature module (require id \"{spec['module']}\").{nl}"
         f"{nl}"
         f"\tAuto-derived by scripts/extract.py from input/message(47).txt: this is the{nl}"
-        f"\tcallback body of guard(\"{spec['guard']}\") in the driver — byte-frozen original{nl}"
-        f"\tcode below the marker (re-derived on every `make extract`; do not hand-edit).{nl}"
+        f"{frozen_note}"
         f"{nl}"
-        f"\tThe block originally closed over driver locals; the driver now passes them{nl}"
-        f"\tin via the ctx table:{nl}"
+        f"{mechanics}"
         f"{nl}"
         f"\t\tguard(\"{spec['guard']}\", function(){nl}"
         f"\t\t\treturn require(\"{spec['module']}\")({{ {ctx_inline} }});{nl}"
@@ -281,21 +590,34 @@ def build_feature_module_text(spec: dict, body: str) -> str:
         f"]]{nl}"
         f"return function(ctx){nl}"
         f"{ctx_locals}"
+        f"{live_locals}"
         f"{nl}"
     )
-    marker = f"-- [ guard(\"{spec['guard']}\") callback body — byte-exact from input/message(47).txt ]"
+    if live:
+        marker = (f"-- [ guard(\"{spec['guard']}\") callback body — byte-exact from "
+                  f"input/message(47).txt except reads of ALIVE rewritten to __ALIVE() ]")
+    else:
+        marker = f"-- [ guard(\"{spec['guard']}\") callback body — byte-exact from input/message(47).txt ]"
     return header + marker + nl + body + "end;" + nl
 
 
 def build_feature_shim(spec: dict) -> str:
-    """The driver-side replacement: guard() re-entered through the ctx factory."""
+    """The driver-side replacement: guard() re-entered through the ctx factory.
+
+    Live vars are passed as getters closing over the driver's own upvalue, so
+    every module read sees the CURRENT value (e.g. after Unload() flips ALIVE).
+    """
     nl = "\r\n"
+    live = spec.get("live", [])
     ctx_entries = "".join(f"\t\t{name} = {name},{nl}" for name in spec["ctx"])
+    live_entries = "".join(
+        f"\t\t__{name} = function() return {name} end,{nl}" for name in live)
     return (
         f"-- [ {spec['summary']} — extracted to {spec['file']}; driver locals it uses are bound via ctx ]{nl}"
         f"guard(\"{spec['guard']}\", function(){nl}"
         f"\treturn require(\"{spec['module']}\")({{{nl}"
         f"{ctx_entries}"
+        f"{live_entries}"
         f"\t}});{nl}"
         f"end);"
     )
@@ -362,8 +684,14 @@ def apply_feature_patches(driver: str) -> tuple[str, list[dict]]:
         plan = plans[idx]
         spec = plan["spec"]
         body = plan["body"]
+        live = spec.get("live", [])
+        if live:
+            module_body, rewrites = rewrite_live_reads(
+                body, live, f"feature module {spec['module']}")
+        else:
+            module_body, rewrites = body, 0
         shim = build_feature_shim(spec)
-        module_text = build_feature_module_text(spec, body)
+        module_text = build_feature_module_text(spec, module_body)
         patched = patched[:plan["start"]] + shim + patched[plan["close_end"]:]
         stripped_block = driver[plan["start"]:plan["close_end"]].rstrip("\r\n")
         metas[idx] = {
@@ -371,10 +699,13 @@ def apply_feature_patches(driver: str) -> tuple[str, list[dict]]:
             "file": spec["file"],
             "guard": spec["guard"],
             "ctx": list(spec["ctx"]),
+            "live": list(live),
+            "live_reads_rewritten": rewrites,
             "block_chars": len(stripped_block),
             "body_chars": len(body),
             "block_sha256": sha256(stripped_block.encode("utf-8")),
             "body_sha256": sha256(body.encode("utf-8")),
+            "module_body_sha256": sha256(module_body.encode("utf-8")),
             "module_file_sha256": sha256(module_text.encode("utf-8")),
             "shim_sha256": sha256(shim.encode("utf-8")),
             "_module_text": module_text,
@@ -388,7 +719,24 @@ def apply_feature_patches(driver: str) -> tuple[str, list[dict]]:
         if n != 1:
             raise ExtractionError(
                 f"patched driver: guard(\"{spec['guard']}\"...) appears {n} times (expected 1)")
+        for name in spec.get("live", []):
+            getter_entry = f"__{name} = function() return {name} end"
+            if shim_of := _shim_text(patched, spec):
+                if getter_entry not in shim_of:
+                    raise ExtractionError(
+                        f"patched driver: live getter for {spec['module']} missing "
+                        f"({getter_entry})")
     return patched, metas
+
+
+def _shim_text(patched: str, spec: dict) -> str:
+    """The patched shim text for a spec (anchor .. its own 'end);')."""
+    anchor = f'guard("{spec["guard"]}", function()'
+    start = patched.find(anchor)
+    if start < 0:
+        return ""
+    stop = patched.find("end);", start)
+    return patched[start:stop + len("end);")] if stop >= 0 else ""
 
 
 PROLOGUE = """\
@@ -407,12 +755,14 @@ PROLOGUE = """\
 \t\trequire("modules")           -> table of discovered code modules
 
 \tThe chunk body below the marker is the original top-level driver, embedded
-\tbyte-exactly except for documented feature-module patches: the guard()
-\tblocks listed in FEATURE_MODULES (scripts/extract.py) are extracted into
-\tsrc/modules/ and re-entered through require("modules.<name>") with their
-\tdriver-local upvalues bound via a ctx table. Blocks that read the driver's
-\tmutable ALIVE flag stay inline on purpose (a ctx copy would freeze it).
-\tExecution order and behavior are identical to the original.
+\tbyte-exactly except for documented feature-module patches: all 39 top-level
+\tguard() blocks listed in FEATURE_MODULES (scripts/extract.py) are extracted
+\tinto src/modules/ and re-entered through require("modules.<name>") with
+\ttheir driver-local upvalues bound via a ctx table. Blocks that read the
+\tdriver's mutable ALIVE flag (Unload() flips it) receive a live getter
+\t(__ALIVE = function() return ALIVE end) instead of a value copy, and their
+\tfree reads of ALIVE are rewritten to __ALIVE() — upvalue semantics
+\tpreserved. Execution order and behavior are identical to the original.
 ]]
 local SOURCE = require("neverlose");
 local LIBRARY_SOURCE = require("visualsui");
@@ -691,8 +1041,13 @@ def main() -> int:
     print(f"[extract] wrote src/init.lua + 3 payload chunks + assets "
           f"({len(text_assets)} text, {len(binary_assets)} binary)")
     for meta in patch_metas:
+        live_note = ""
+        if meta["live"]:
+            live_note = (f"; live: {', '.join(meta['live'])} "
+                         f"({meta['live_reads_rewritten']} reads rewritten)")
         print(f"[extract] feature module: {meta['file']} "
-              f"({meta['body_chars']:,} frozen body chars; ctx: {', '.join(meta['ctx'])})")
+              f"({meta['body_chars']:,} body chars; ctx: {', '.join(meta['ctx'])}"
+              f"{live_note})")
     print("[extract] wrote scripts/extract_manifest.json")
     print("[extract] DONE")
     return 0
