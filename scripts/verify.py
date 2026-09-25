@@ -46,6 +46,10 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 LOG_PATH = PROJECT_ROOT / "scripts" / "verification_log.txt"
 
+# share FEATURE_MODULES / patch logic with the generator itself, so verify
+# always re-derives expectations with the exact code that produced the files
+import extract  # noqa: E402  (scripts/ is on sys.path when run as a script)
+
 HAND_WRITTEN_LUA = [
     "src/assets/init.lua",
     "src/modules/example.lua",
@@ -54,14 +58,15 @@ HAND_WRITTEN_LUA = [
 # Extracted, byte-frozen artifacts: syntax is gated hard by luau-compile;
 # typecheck findings cannot be fixed without breaking byte-exactness, so the
 # analyzer runs on them informationally (parse errors would still fail
-# luau-compile first).
+# luau-compile first). Derived feature modules carry a byte-frozen callback
+# body (only their small wrapper is generated), so they count as frozen too.
 FROZEN_LUA = [
     "dist/main.lua",
     "src/init.lua",
     "src/neverlose/init.lua",
     "src/neverlose/skins.luau",
     "src/visualsui/init.luau",
-]
+] + [spec["file"] for spec in extract.FEATURE_MODULES]
 
 ENVIRONMENTAL_LINT = re.compile(
     r"(Unknown global '[^']+'|Unknown type '[^']+'|Unknown global requires check)"
@@ -257,7 +262,7 @@ def check_extraction() -> None:
         else:
             record("FAIL", f"round-trip {rel}: sha256 {file_sha[:16]}... != {expected_sha[:16]}...")
 
-    # driver tail of src/init.lua
+    # driver tail of src/init.lua — original driver + documented feature patches
     init_text = read_exact(PROJECT_ROOT / "src" / "init.lua")
     marker = manifest["driver"]["marker"]
     idx = init_text.find(marker)
@@ -266,11 +271,27 @@ def check_extraction() -> None:
     else:
         tail = init_text[idx + len(marker):]
         tail = tail[2:] if tail.startswith("\r\n") else (tail[1:] if tail[:1] in ("\n", "\r") else tail)
+        patched_driver, patch_metas = extract.apply_feature_patches(payloads["DRIVER"])
+        expected_sha = sha256(patched_driver.encode("utf-8"))
         tail_sha = sha256(tail.encode("utf-8"))
-        if tail_sha == manifest["driver"]["sha256"]:
-            record("PASS", "src/init.lua embeds the original driver byte-exactly")
+        if tail_sha == expected_sha:
+            names = ", ".join(m["module"] for m in patch_metas) or "none"
+            record("PASS", f"src/init.lua embeds the driver + documented feature patches ({names})")
         else:
-            record("FAIL", "src/init.lua driver tail hash mismatch")
+            record("FAIL", "src/init.lua driver tail mismatch vs original + feature patches")
+
+        # derived feature module files must be byte-exact re-derivations
+        for spec, meta in zip(extract.FEATURE_MODULES, patch_metas):
+            path = PROJECT_ROOT / spec["file"]
+            if not path.exists():
+                record("FAIL", f"feature module missing: {spec['file']}")
+                continue
+            if sha256_file(path) == meta["module_file_sha256"]:
+                record("PASS", f"feature module {spec['file']}: byte-exact re-derivation "
+                               f"({meta['body_chars']:,} frozen body chars, ctx: {len(meta['ctx'])} upvalues)")
+            else:
+                record("FAIL", f"feature module {spec['file']}: differs from re-derivation "
+                               f"(body must stay byte-frozen; edit scripts/extract.py FEATURE_MODULES)")
 
 
 def check_boot_data() -> None:
@@ -384,7 +405,7 @@ def check_luau() -> None:
         "src/assets/init.lua",
         "src/modules/init.lua",
         "src/modules/example.lua",
-    ]
+    ] + [spec["file"] for spec in extract.FEATURE_MODULES]
     dist_main = PROJECT_ROOT / "dist" / "main.lua"
     if dist_main.exists():
         luau_files.append("dist/main.lua")
@@ -441,8 +462,8 @@ def check_luau() -> None:
         else:
             record("FAIL", f"stylua --check reported differences: {out.splitlines()[0] if out else ''}")
         record("WARN", "stylua --check scoped to hand-written files only — extracted payloads, "
-                       "the driver tail and the generated modules index must stay byte-exact "
-                       "per extraction integrity checks")
+                       "the driver tail (incl. feature-module patches) and the generated modules "
+                       "index must stay byte-exact per extraction integrity checks")
     else:
         record("SKIP", "stylua not available — install StyLua (https://github.com/JohnnyMorganz/StyLua)")
 

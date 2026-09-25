@@ -1,4 +1,4 @@
-roblox-modular verification — 2026-09-25T14:16:34+00:00
+roblox-modular verification — 2026-09-25T15:49:33+00:00
 
 == 1. EXTRACTION INTEGRITY ==
 [PASS] input file intact (3,121,224 bytes, sha256 ce0401343fcbe843...)
@@ -11,7 +11,21 @@ roblox-modular verification — 2026-09-25T14:16:34+00:00
 [PASS] round-trip src/visualsui/init.luau: byte-exact (338,481 bytes)
 [PASS] round-trip assets/boot_data.json: byte-exact (1,827,778 bytes)
 [PASS] round-trip src/neverlose/skins.luau: byte-exact (28,666 bytes)
-[PASS] src/init.lua embeds the original driver byte-exactly
+[PASS] src/init.lua embeds the driver + documented feature patches (modules.loading, modules.links, modules.cosmetics, modules.backtrack, modules.world_fx_math, modules.weather, modules.misc, modules.fun_hud, modules.aimbot, modules.bot_esp, modules.server, modules.trade, modules.menu, modules.config)
+[PASS] feature module src/modules/loading.lua: byte-exact re-derivation (3,135 frozen body chars, ctx: 4 upvalues)
+[PASS] feature module src/modules/links.lua: byte-exact re-derivation (729 frozen body chars, ctx: 3 upvalues)
+[PASS] feature module src/modules/cosmetics.lua: byte-exact re-derivation (3,139 frozen body chars, ctx: 4 upvalues)
+[PASS] feature module src/modules/backtrack.lua: byte-exact re-derivation (2,544 frozen body chars, ctx: 2 upvalues)
+[PASS] feature module src/modules/world_fx_math.lua: byte-exact re-derivation (3,222 frozen body chars, ctx: 1 upvalues)
+[PASS] feature module src/modules/weather.lua: byte-exact re-derivation (9,375 frozen body chars, ctx: 7 upvalues)
+[PASS] feature module src/modules/misc.lua: byte-exact re-derivation (28,249 frozen body chars, ctx: 8 upvalues)
+[PASS] feature module src/modules/fun_hud.lua: byte-exact re-derivation (5,116 frozen body chars, ctx: 5 upvalues)
+[PASS] feature module src/modules/aimbot.lua: byte-exact re-derivation (16,858 frozen body chars, ctx: 8 upvalues)
+[PASS] feature module src/modules/bot_esp.lua: byte-exact re-derivation (5,824 frozen body chars, ctx: 4 upvalues)
+[PASS] feature module src/modules/server.lua: byte-exact re-derivation (8,561 frozen body chars, ctx: 7 upvalues)
+[PASS] feature module src/modules/trade.lua: byte-exact re-derivation (20,507 frozen body chars, ctx: 6 upvalues)
+[PASS] feature module src/modules/menu.lua: byte-exact re-derivation (21,113 frozen body chars, ctx: 9 upvalues)
+[PASS] feature module src/modules/config.lua: byte-exact re-derivation (2,471 frozen body chars, ctx: 4 upvalues)
 
 == 2. BOOT_DATA INTEGRITY ==
 [PASS] assets/boot_data.json parses as JSON
@@ -46,33 +60,60 @@ roblox-modular verification — 2026-09-25T14:16:34+00:00
 [PASS] luau-compile src/assets/init.lua
 [PASS] luau-compile src/modules/init.lua
 [PASS] luau-compile src/modules/example.lua
+[PASS] luau-compile src/modules/loading.lua
+[PASS] luau-compile src/modules/links.lua
+[PASS] luau-compile src/modules/cosmetics.lua
+[PASS] luau-compile src/modules/backtrack.lua
+[PASS] luau-compile src/modules/world_fx_math.lua
+[PASS] luau-compile src/modules/weather.lua
+[PASS] luau-compile src/modules/misc.lua
+[PASS] luau-compile src/modules/fun_hud.lua
+[PASS] luau-compile src/modules/aimbot.lua
+[PASS] luau-compile src/modules/bot_esp.lua
+[PASS] luau-compile src/modules/server.lua
+[PASS] luau-compile src/modules/trade.lua
+[PASS] luau-compile src/modules/menu.lua
+[PASS] luau-compile src/modules/config.lua
 [PASS] luau-compile dist/main.lua
-[PASS] luau-analyze src/init.lua (informational: 2314 environmental + 305 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/init.lua (informational: 1982 environmental + 221 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/neverlose/init.lua (informational: 78 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/neverlose/skins.luau (informational: 59 environmental + 1 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/visualsui/init.luau (informational: 1734 environmental + 30 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] luau-analyze src/assets/init.lua (6 environmental unknown-global/type notices, expected for executor code outside Roblox)
 [PASS] luau-analyze src/modules/init.lua
 [PASS] luau-analyze src/modules/example.lua
-[PASS] luau-analyze dist/main.lua (informational: 2314 environmental + 307 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/loading.lua (informational: 25 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/links.lua (informational: 3 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/cosmetics.lua (informational: 1 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/backtrack.lua (informational: 2 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/world_fx_math.lua (informational: 14 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/weather.lua (informational: 67 environmental + 3 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/misc.lua (informational: 60 environmental + 5 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/fun_hud.lua (informational: 20 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/aimbot.lua (informational: 26 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/bot_esp.lua (informational: 21 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/server.lua (informational: 29 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/trade.lua (informational: 29 environmental + 2 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/menu.lua (informational: 33 environmental + 1 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/modules/config.lua
+[PASS] luau-analyze dist/main.lua (informational: 2312 environmental + 265 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
 [PASS] stylua --check 2 hand-written file(s)
-[WARN] stylua --check scoped to hand-written files only — extracted payloads, the driver tail and the generated modules index must stay byte-exact per extraction integrity checks
-[PASS] selene 7 file(s) (0 errors; warnings tolerated via --allow-warnings, executor std from executor.yml)
+[WARN] stylua --check scoped to hand-written files only — extracted payloads, the driver tail (incl. feature-module patches) and the generated modules index must stay byte-exact per extraction integrity checks
+[PASS] selene 21 file(s) (0 errors; warnings tolerated via --allow-warnings, executor std from executor.yml)
 
 == 4. BUNDLE INTEGRITY ==
-[bundle] regenerated src/modules/init.lua
-[bundle] dist/main.lua: 3,124,711 bytes, 4 source modules, 2 code modules
-[bundle] sha256 eafeeaf6b15b7182...
+[bundle] dist/main.lua: 3,143,952 bytes, 4 source modules, 16 code modules
+[bundle] sha256 d72aedb149a9adea...
 [bundle] self-check: all require() literals resolve, no duplicate module ids
 [bundle] DONE
 [PASS] bundle.py ran clean
 [PASS] all 4 embedded source modules are byte-identical to the extracted payloads
-[PASS] every require() literal resolves (6 distinct ids)
+[PASS] every require() literal resolves (20 distinct ids)
 [PASS] no duplicate module ids
 [PASS] registry assignment scan: no duplicate keys
 [PASS] all 3 text + 15 binary assets present, hashes match
 [PASS] dist/main.lua is valid Luau (luau-compile)
-[PASS] dist/main.lua hash matches bundle report (3,124,711 bytes)
+[PASS] dist/main.lua hash matches bundle report (3,143,952 bytes)
 
 == 5. RUNTIME SMOKE TEST (lune) ==
    SMOKE_NOTE skins chunk not compiled (game-gated path)
@@ -80,7 +121,7 @@ roblox-modular verification — 2026-09-25T14:16:34+00:00
 [PASS] lune smoke test: driver ran to completion, payloads compiled, BOOT_DATA JSON-decoded byte-exactly
 
 == 6. ZIP INTEGRITY ==
-[zip] wrote dist/roblox-modular.zip (4,726,691 bytes, 42 files)
+[zip] wrote dist/roblox-modular.zip (4,767,917 bytes, 59 files)
 [zip] input/message(47).txt included: False
 [zip] DONE
 [PASS] build_zip.py ran clean
@@ -89,4 +130,4 @@ roblox-modular verification — 2026-09-25T14:16:34+00:00
 [PASS] zip has no absolute paths or traversal segments
 [PASS] input/message(47).txt excluded from zip (use INCLUDE_INPUT=1 to embed)
 
-SUMMARY: 66 passed, 0 failed, 1 warnings, 0 skipped
+SUMMARY: 108 passed, 0 failed, 1 warnings, 0 skipped

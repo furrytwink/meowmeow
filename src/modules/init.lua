@@ -6,6 +6,20 @@
 ]]
 local modules = {};
 
+modules["modules.aimbot"] = require("modules.modules.aimbot");
+modules["modules.backtrack"] = require("modules.modules.backtrack");
+modules["modules.bot_esp"] = require("modules.modules.bot_esp");
+modules["modules.config"] = require("modules.modules.config");
+modules["modules.cosmetics"] = require("modules.modules.cosmetics");
 modules["modules.example"] = require("modules.modules.example");
+modules["modules.fun_hud"] = require("modules.modules.fun_hud");
+modules["modules.links"] = require("modules.modules.links");
+modules["modules.loading"] = require("modules.modules.loading");
+modules["modules.menu"] = require("modules.modules.menu");
+modules["modules.misc"] = require("modules.modules.misc");
+modules["modules.server"] = require("modules.modules.server");
+modules["modules.trade"] = require("modules.modules.trade");
+modules["modules.weather"] = require("modules.modules.weather");
+modules["modules.world_fx_math"] = require("modules.modules.world_fx_math");
 
 return modules;

@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-25T14:17:41+00:00",
+  "generated_utc": "2026-09-25T15:50:47+00:00",
   "input": {
     "path": "input/message(47).txt",
     "sha256": "ce0401343fcbe8431c42217a69216760127457b0e79ab55e38d7d3cc156e8f33",
@@ -30,8 +30,266 @@
   "driver": {
     "sha256": "259d88dd98eb4254d3f7d005e4609a196cc76f09cab3e0dddaf79c8d5fb74463",
     "chars": 889739,
-    "file": "src/init.lua (verbatim tail after the marker line)",
-    "marker": "-- [ EXTRACTED DRIVER BODY — everything below is byte-exact from input/message(47).txt ]"
+    "file": "src/init.lua (tail after the marker line; feature-module patches applied)",
+    "marker": "-- [ EXTRACTED DRIVER BODY — everything below is byte-exact from input/message(47).txt ]",
+    "patched_sha256": "f39a5c01cda7202e1e36f25fd9404869eb4ba5527d941922a5e055a66be679fd",
+    "patched_chars": 762699,
+    "patches": [
+      {
+        "module": "modules.loading",
+        "file": "src/modules/loading.lua",
+        "guard": "loading",
+        "ctx": [
+          "NeverLose",
+          "Remote",
+          "RunService",
+          "onUnload"
+        ],
+        "block_chars": 3169,
+        "body_chars": 3135,
+        "block_sha256": "f82dde3d7ddaea29eb4e53dfb6c686a75fc6c0260e69f12cd9d297073a153e2d",
+        "body_sha256": "e1ea153bc7e8413be6581065bf1b331aa8b9fe70160d7768bc73d5af3551465b",
+        "module_file_sha256": "1d32e252c9dfee0b24a31f726289333a0b91cb2c0aa337875faafcaf691fc7ea",
+        "shim_sha256": "d3797342a22b7f860cd0a693750b5d93d5de820b48b299da71295a97a7429a88"
+      },
+      {
+        "module": "modules.links",
+        "file": "src/modules/links.lua",
+        "guard": "links",
+        "ctx": [
+          "NeverLose",
+          "Notification",
+          "Remote"
+        ],
+        "block_chars": 761,
+        "body_chars": 729,
+        "block_sha256": "c42a53d280ec7c77c0ac38dc57693145c2d6c4ba29bc47b968ba6be8d500dc64",
+        "body_sha256": "cc00b08c1c03ca312f82abe18427ed5c1da7db5953576a72e3f544318ea63320",
+        "module_file_sha256": "7dc4d97cc480dd77f84ee5722df0e51c43a34b4fe89751d906b05cc900e1903c",
+        "shim_sha256": "961100e71413273f45965466c70f4bbd264d99785434071574d4ba859432657f"
+      },
+      {
+        "module": "modules.cosmetics",
+        "file": "src/modules/cosmetics.lua",
+        "guard": "cosmetics",
+        "ctx": [
+          "ESP",
+          "Sections",
+          "Visuals",
+          "onUnload"
+        ],
+        "block_chars": 3175,
+        "body_chars": 3139,
+        "block_sha256": "c71e8e89962222c691bfbc010f56ac7cca0509f1617ea52cf87889c5701455f6",
+        "body_sha256": "61ef65e46c1be03ff0c7f1b403b8fe7dd8886cebd1780e4bd8e76d7871880627",
+        "module_file_sha256": "8ccf048bb03595498ccb1d76cfea2d892b5769969b00b5efc1064f3fa2538997",
+        "shim_sha256": "33466868706d8c0f66fcf60f2ffb6bad925896177822e952fe79c69a2cefcde9"
+      },
+      {
+        "module": "modules.backtrack",
+        "file": "src/modules/backtrack.lua",
+        "guard": "backtrack",
+        "ctx": [
+          "ESP",
+          "Sections"
+        ],
+        "block_chars": 2580,
+        "body_chars": 2544,
+        "block_sha256": "73139222b790a0c314d96e53938a8ef5cbd3e19c30e6a53e765cf57ec3da29ad",
+        "body_sha256": "ca06d9688fadba8409621568ffd306e669412ff8fec74937ffb8f57ab4470394",
+        "module_file_sha256": "bd3134573fd9ced755ade3e7c1e79e06a65880140840975a6010bac2985d987a",
+        "shim_sha256": "2abbbdac23398e8fcc2ca830551a0e1276aca741e9754b376e39d68a3aadaef8"
+      },
+      {
+        "module": "modules.world_fx_math",
+        "file": "src/modules/world_fx_math.lua",
+        "guard": "world_fx_math",
+        "ctx": [
+          "ESP"
+        ],
+        "block_chars": 3262,
+        "body_chars": 3222,
+        "block_sha256": "b85e91e21193eff89b6db70e39ab8f24d594c0845aa5c874d4994e4d20752583",
+        "body_sha256": "d391ba805e54ff088f0a969c2d643b739086ab4c51de6d890b15211c616c9abf",
+        "module_file_sha256": "e235822a8d285d83d2ad526742d540bb8926b7dfcd664d0e19577e3b62b0183a",
+        "shim_sha256": "fe1af0068810c7e26b2cbf70a30447a52d3a4cc0cb3c53c1646bf0f8fc01c5a6"
+      },
+      {
+        "module": "modules.weather",
+        "file": "src/modules/weather.lua",
+        "guard": "weather",
+        "ctx": [
+          "ESP",
+          "INIT_GENERATION",
+          "NeverLose",
+          "Render",
+          "RunService",
+          "Sections",
+          "TAG"
+        ],
+        "block_chars": 9409,
+        "body_chars": 9375,
+        "block_sha256": "8f82f523b92e48d7852bc3f9a9ddb505b842c3f3b140a4fa530538554c7d7e26",
+        "body_sha256": "9546835acee90aa1f932d44ec8e8e0c6f090cde9005433a21c712eea90c3ba77",
+        "module_file_sha256": "eca153d37dc356aa36d8c54990440c4a8e37dd8d0e90020c89aac52b1efe8856",
+        "shim_sha256": "1382100f010bd44ebd10b058a5f5f996dc238270556649646dd3e3ecb890914a"
+      },
+      {
+        "module": "modules.misc",
+        "file": "src/modules/misc.lua",
+        "guard": "misc",
+        "ctx": [
+          "ESP",
+          "GLOBAL",
+          "LocalPlayer",
+          "NeverLose",
+          "Players",
+          "RunService",
+          "Sections",
+          "onUnload"
+        ],
+        "block_chars": 28280,
+        "body_chars": 28249,
+        "block_sha256": "7ba5b97ec96df3e4490e29fa3a0aed9747e562d015071f8f498fd66a0c9e925e",
+        "body_sha256": "18e3451924f6c16155fbed6dd5ec99fb2ae0ce946edcd0dbe088cbb549bdc1f9",
+        "module_file_sha256": "97f2e841171f4a1cc1a41daf28b24032304422668953f967a96b20341c183ad2",
+        "shim_sha256": "f637ab05e0cca98c6373acb8f09db1c7ba1e3052f97fd7ec1564549b6192f320"
+      },
+      {
+        "module": "modules.fun_hud",
+        "file": "src/modules/fun_hud.lua",
+        "guard": "fun hud",
+        "ctx": [
+          "LocalPlayer",
+          "NeverLose",
+          "RunService",
+          "Sections",
+          "onUnload"
+        ],
+        "block_chars": 5150,
+        "body_chars": 5116,
+        "block_sha256": "d14d2d515f678918157e7efb7873c049aa48a09abaa47552445868f9e80ab606",
+        "body_sha256": "eeca24d0e14951a60153297f52e01e1682f05742d542e1b98cdf6f6481292a7d",
+        "module_file_sha256": "dcc907c34788cd1086bd6c3e40ca74186c6b4e52eafc358a9e5246089d65c74c",
+        "shim_sha256": "c502c2a2cf7beea5f38ea8d2288059b3788df35011750c96a835270fce3cd763"
+      },
+      {
+        "module": "modules.aimbot",
+        "file": "src/modules/aimbot.lua",
+        "guard": "aimbot",
+        "ctx": [
+          "ESP",
+          "LocalPlayer",
+          "NeverLose",
+          "Notification",
+          "Players",
+          "RunService",
+          "Sections",
+          "onUnload"
+        ],
+        "block_chars": 16891,
+        "body_chars": 16858,
+        "block_sha256": "c28649d0b06dd63b966919b12dd1fca677b263c451ee24de4780e3a46b096e68",
+        "body_sha256": "4b8b634b7454b1a73b3166254240ee91c8b28a6a9d046f719f2df9a5016f8005",
+        "module_file_sha256": "187c34e12df2ea1e271430b7ad6c3c1f9c3e3c44fcd7c48150915ffaae9e64ff",
+        "shim_sha256": "9fda87e212d24f319f625402697de14cfefc32aafce0ecffc99c7ba025eaccc2"
+      },
+      {
+        "module": "modules.bot_esp",
+        "file": "src/modules/bot_esp.lua",
+        "guard": "bot esp",
+        "ctx": [
+          "NeverLose",
+          "RunService",
+          "Sections",
+          "onUnload"
+        ],
+        "block_chars": 5858,
+        "body_chars": 5824,
+        "block_sha256": "410907f760f36084156425f72236eccaabf9f32dbadb37a21e35f0ae30ad7d91",
+        "body_sha256": "764e54705b587928dbef71ae33a9c1c8b264d4c4fb1c9cd9a27683732c8ee4d0",
+        "module_file_sha256": "41ee91708ea8e6c3bd1a91d3df72d7ad67d65c79908afc30c2949ee9c52c781b",
+        "shim_sha256": "186cbd84d1e8acce609fba2c91d9b4468a87dad4ae86ad95ea85cce2c962550f"
+      },
+      {
+        "module": "modules.server",
+        "file": "src/modules/server.lua",
+        "guard": "server",
+        "ctx": [
+          "LocalPlayer",
+          "NeverLose",
+          "Notification",
+          "Players",
+          "RunService",
+          "Sections",
+          "onUnload"
+        ],
+        "block_chars": 8594,
+        "body_chars": 8561,
+        "block_sha256": "37d724acf3c3117ee00a67a2a9c2399b68c04a3e549d554df67d20b89f9792e1",
+        "body_sha256": "1326607f9fa97214dc8e1fa119956aad71889bef02db7fc6e354a321798fcbcb",
+        "module_file_sha256": "db93291885c3ab972d2c071218c9d656b9ae5de344aa4d80aaff4daf1eeef316",
+        "shim_sha256": "47076a253ebbf9f897ff7c70cffda44fc522f8a82a2e2715afdfecfb006c97ec"
+      },
+      {
+        "module": "modules.trade",
+        "file": "src/modules/trade.lua",
+        "guard": "trade",
+        "ctx": [
+          "ESP",
+          "GLOBAL",
+          "Remote",
+          "Sections",
+          "fluxus",
+          "http"
+        ],
+        "block_chars": 20539,
+        "body_chars": 20507,
+        "block_sha256": "05b4c9e8b5c42851476aeee4e17d3e80d26cfa99fccad943ba3bcac2fd76d4a8",
+        "body_sha256": "f38836caca548169ea22db3f93b827058034f63e323cce230cae53960ca1d085",
+        "module_file_sha256": "b167cf5b402a0c70a21ef592e19bf8efd42d19cac5f81f213b14777037c162ec",
+        "shim_sha256": "9e85219ef5722de0c070245582370101aeb643726ce5c05ffecdb08f0664c0cb"
+      },
+      {
+        "module": "modules.menu",
+        "file": "src/modules/menu.lua",
+        "guard": "menu",
+        "ctx": [
+          "ESP",
+          "NeverLose",
+          "Notification",
+          "Preview",
+          "Remote",
+          "RunService",
+          "Sections",
+          "Window",
+          "ownedSound"
+        ],
+        "block_chars": 21144,
+        "body_chars": 21113,
+        "block_sha256": "6b76ffa6bcb36405f33a8a0f9b6993891d82c4ed8c61ef96672abe430e1d4c59",
+        "body_sha256": "2d2762cb58ce0ce67eecd65966cf8fd0b5659fcd08437c6ae0b67130de3fb2ea",
+        "module_file_sha256": "614370a41abd9f0a1f3f67ee63925828d822ac21cb74bb04b9b54ddeabcada97",
+        "shim_sha256": "6d99931ce03a168bb0ed2288130adf99ab60c2cf2192deba1ca7f2a49056fff1"
+      },
+      {
+        "module": "modules.config",
+        "file": "src/modules/config.lua",
+        "guard": "config",
+        "ctx": [
+          "ESP",
+          "NeverLose",
+          "Window",
+          "userFile"
+        ],
+        "block_chars": 2504,
+        "body_chars": 2471,
+        "block_sha256": "02cd07a9ce010f63e4c95e9f8d03264a3d54718585cbcd166965dceaea9231b3",
+        "body_sha256": "5f6f7ee141f0a1a1ed22d19506ecb3336134e288745040deb02ae72a02f87a18",
+        "module_file_sha256": "1b26d2e623e300249f02967ea24ba0d8f14c4b858734b2d8ad7e4d8c0cc04493",
+        "shim_sha256": "95a28785d16af2331864e3923dd44cbe307f0b06bc48e4770f3ef096e81a0db7"
+      }
+    ]
   },
   "boot_data": {
     "manifest_count": 555,

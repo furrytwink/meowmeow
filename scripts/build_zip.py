@@ -33,7 +33,7 @@ ZIP_PATH = PROJECT_ROOT / "dist" / "roblox-modular.zip"
 INCLUDE_FILES = ["README.md", "Makefile", "selene.toml", "executor.yml", "roblox.yml",
                  "dist/main.lua", "dist/bundle_report.json"]
 INCLUDE_DIRS = ["src", "assets", "scripts"]
-ALWAYS_EXCLUDE_PARTS = {".smoke", "__pycache__"}
+ALWAYS_EXCLUDE_PARTS = {".smoke", ".analysis", "__pycache__"}
 ALWAYS_EXCLUDE_SUFFIX = {".pyc"}
 FIXED_DATE = (2026, 1, 1, 0, 0, 0)
 

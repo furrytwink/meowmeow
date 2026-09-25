@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-25T14:18:12+00:00",
+  "generated_utc": "2026-09-25T15:51:04+00:00",
   "entry": "src/init.lua",
   "source_modules": {
     "neverlose": {
@@ -28,15 +28,85 @@
       "generated": true,
       "file": "src/modules/init.lua"
     },
+    "modules.aimbot": {
+      "file": "src/modules/aimbot.lua",
+      "sha256": "187c34e12df2ea1e271430b7ad6c3c1f9c3e3c44fcd7c48150915ffaae9e64ff",
+      "chars": 17926
+    },
+    "modules.backtrack": {
+      "file": "src/modules/backtrack.lua",
+      "sha256": "bd3134573fd9ced755ade3e7c1e79e06a65880140840975a6010bac2985d987a",
+      "chars": 3270
+    },
+    "modules.bot_esp": {
+      "file": "src/modules/bot_esp.lua",
+      "sha256": "41ee91708ea8e6c3bd1a91d3df72d7ad67d65c79908afc30c2949ee9c52c781b",
+      "chars": 6678
+    },
+    "modules.config": {
+      "file": "src/modules/config.lua",
+      "sha256": "1b26d2e623e300249f02967ea24ba0d8f14c4b858734b2d8ad7e4d8c0cc04493",
+      "chars": 3283
+    },
+    "modules.cosmetics": {
+      "file": "src/modules/cosmetics.lua",
+      "sha256": "8ccf048bb03595498ccb1d76cfea2d892b5769969b00b5efc1064f3fa2538997",
+      "chars": 3969
+    },
     "modules.example": {
       "file": "src/modules/example.lua",
       "sha256": "a3fdceaa16d47ab7c03d4509b39b148444c5215756c30e4121ab2b0a9cfa0f06",
       "chars": 521
+    },
+    "modules.fun_hud": {
+      "file": "src/modules/fun_hud.lua",
+      "sha256": "dcc907c34788cd1086bd6c3e40ca74186c6b4e52eafc358a9e5246089d65c74c",
+      "chars": 6036
+    },
+    "modules.links": {
+      "file": "src/modules/links.lua",
+      "sha256": "7dc4d97cc480dd77f84ee5722df0e51c43a34b4fe89751d906b05cc900e1903c",
+      "chars": 1517
+    },
+    "modules.loading": {
+      "file": "src/modules/loading.lua",
+      "sha256": "1d32e252c9dfee0b24a31f726289333a0b91cb2c0aa337875faafcaf691fc7ea",
+      "chars": 3981
+    },
+    "modules.menu": {
+      "file": "src/modules/menu.lua",
+      "sha256": "614370a41abd9f0a1f3f67ee63925828d822ac21cb74bb04b9b54ddeabcada97",
+      "chars": 22203
+    },
+    "modules.misc": {
+      "file": "src/modules/misc.lua",
+      "sha256": "97f2e841171f4a1cc1a41daf28b24032304422668953f967a96b20341c183ad2",
+      "chars": 29281
+    },
+    "modules.server": {
+      "file": "src/modules/server.lua",
+      "sha256": "db93291885c3ab972d2c071218c9d656b9ae5de344aa4d80aaff4daf1eeef316",
+      "chars": 9595
+    },
+    "modules.trade": {
+      "file": "src/modules/trade.lua",
+      "sha256": "b167cf5b402a0c70a21ef592e19bf8efd42d19cac5f81f213b14777037c162ec",
+      "chars": 21385
+    },
+    "modules.weather": {
+      "file": "src/modules/weather.lua",
+      "sha256": "eca153d37dc356aa36d8c54990440c4a8e37dd8d0e90020c89aac52b1efe8856",
+      "chars": 10371
+    },
+    "modules.world_fx_math": {
+      "file": "src/modules/world_fx_math.lua",
+      "sha256": "e235822a8d285d83d2ad526742d540bb8926b7dfcd664d0e19577e3b62b0183a",
+      "chars": 3918
     }
   },
   "dist": {
     "file": "dist/main.lua",
-    "sha256": "296161dc0ae8dc33ea1067fc814fe82b1aa3596257a38b038fd38f824a10beac",
-    "bytes": 3124711
+    "sha256": "e9f286b5d814750bcfe4272a89d4f1e4527ebf81b1c16d20cf5d7b2734b36865",
+    "bytes": 3143952
   }
 }
