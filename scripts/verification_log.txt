@@ -1,0 +1,92 @@
+roblox-modular verification — 2026-09-25T14:16:34+00:00
+
+== 1. EXTRACTION INTEGRITY ==
+[PASS] input file intact (3,121,224 bytes, sha256 ce0401343fcbe843...)
+[PASS] re-parse SOURCE: 35,948 chars, sha256 match
+[PASS] re-parse LIBRARY_SOURCE: 338,481 chars, sha256 match
+[PASS] re-parse BOOT_DATA: 1,827,778 chars, sha256 match
+[PASS] re-parse SKIN_SOURCE: 28,664 chars, sha256 match
+[PASS] re-parse driver body: 889,739 chars, sha256 match
+[PASS] round-trip src/neverlose/init.lua: byte-exact (35,948 bytes)
+[PASS] round-trip src/visualsui/init.luau: byte-exact (338,481 bytes)
+[PASS] round-trip assets/boot_data.json: byte-exact (1,827,778 bytes)
+[PASS] round-trip src/neverlose/skins.luau: byte-exact (28,666 bytes)
+[PASS] src/init.lua embeds the original driver byte-exactly
+
+== 2. BOOT_DATA INTEGRITY ==
+[PASS] assets/boot_data.json parses as JSON
+[PASS] manifest.count == len(files) == 555
+[PASS] manifest.total == sum(sizes) == 41,838,756 bytes
+[PASS] manifest.skyboxes valid: 64 names x 6 faces (384 files)
+[PASS] text asset fxatlas_index.json: byte-exact (parses as JSON) declared=16525
+[PASS] text asset menusounds_manifest.json: byte-exact (parses as JSON) declared=2289 [NOTE: original data declares 2289 but embeds 2204 — preserved as-is]
+[PASS] text asset stickers_manifest.json: byte-exact (parses as JSON) declared=2896 [NOTE: original data declares 2896 but embeds 2750 — preserved as-is]
+[PASS] binary asset images/furynew_sheet_1.png: 379,247 bytes == declared, base64 round-trip exact
+[PASS] binary asset images/furynew_sheet_2.png: 380,362 bytes == declared, base64 round-trip exact
+[PASS] binary asset images/furynew_sheet_3.png: 381,624 bytes == declared, base64 round-trip exact
+[PASS] binary asset images/telegram.png: 1,531 bytes == declared, base64 round-trip exact
+[PASS] binary asset images/tiktok.png: 1,354 bytes == declared, base64 round-trip exact
+[PASS] binary asset images/ui_next.png: 2,863 bytes == declared, base64 round-trip exact
+[PASS] binary asset images/ui_pause.png: 1,423 bytes == declared, base64 round-trip exact
+[PASS] binary asset images/ui_play.png: 1,539 bytes == declared, base64 round-trip exact
+[PASS] binary asset images/ui_prev.png: 2,851 bytes == declared, base64 round-trip exact
+[PASS] binary asset images/ui_stop.png: 1,604 bytes == declared, base64 round-trip exact
+[PASS] binary asset particles/comet_bloom.png: 4,827 bytes == declared, base64 round-trip exact
+[PASS] binary asset particles/p_glow.png: 15,265 bytes == declared, base64 round-trip exact
+[PASS] binary asset sounds/time/dobroe-utrechko.ogg: 61,305 bytes == declared, base64 round-trip exact
+[PASS] binary asset sounds/time/dobry-denb.ogg: 47,124 bytes == declared, base64 round-trip exact
+[PASS] binary asset sounds/time/dobry-vecher.ogg: 53,571 bytes == declared, base64 round-trip exact
+[PASS] full reconstruction from split parts is byte-identical (1,827,778 chars, sha256 0bb23aa483230ba6...)
+
+== 3. LUAU SYNTAX / STYLE ==
+[PASS] luau-compile src/init.lua
+[PASS] luau-compile src/neverlose/init.lua
+[PASS] luau-compile src/neverlose/skins.luau
+[PASS] luau-compile src/visualsui/init.luau
+[PASS] luau-compile src/assets/init.lua
+[PASS] luau-compile src/modules/init.lua
+[PASS] luau-compile src/modules/example.lua
+[PASS] luau-compile dist/main.lua
+[PASS] luau-analyze src/init.lua (informational: 2314 environmental + 305 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/neverlose/init.lua (informational: 78 environmental + 0 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/neverlose/skins.luau (informational: 59 environmental + 1 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/visualsui/init.luau (informational: 1734 environmental + 30 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] luau-analyze src/assets/init.lua (6 environmental unknown-global/type notices, expected for executor code outside Roblox)
+[PASS] luau-analyze src/modules/init.lua
+[PASS] luau-analyze src/modules/example.lua
+[PASS] luau-analyze dist/main.lua (informational: 2314 environmental + 307 typecheck-depth findings on byte-frozen code; syntax gated by luau-compile)
+[PASS] stylua --check 2 hand-written file(s)
+[WARN] stylua --check scoped to hand-written files only — extracted payloads, the driver tail and the generated modules index must stay byte-exact per extraction integrity checks
+[PASS] selene 7 file(s) (0 errors; warnings tolerated via --allow-warnings, executor std from executor.yml)
+
+== 4. BUNDLE INTEGRITY ==
+[bundle] regenerated src/modules/init.lua
+[bundle] dist/main.lua: 3,124,711 bytes, 4 source modules, 2 code modules
+[bundle] sha256 eafeeaf6b15b7182...
+[bundle] self-check: all require() literals resolve, no duplicate module ids
+[bundle] DONE
+[PASS] bundle.py ran clean
+[PASS] all 4 embedded source modules are byte-identical to the extracted payloads
+[PASS] every require() literal resolves (6 distinct ids)
+[PASS] no duplicate module ids
+[PASS] registry assignment scan: no duplicate keys
+[PASS] all 3 text + 15 binary assets present, hashes match
+[PASS] dist/main.lua is valid Luau (luau-compile)
+[PASS] dist/main.lua hash matches bundle report (3,124,711 bytes)
+
+== 5. RUNTIME SMOKE TEST (lune) ==
+   SMOKE_NOTE skins chunk not compiled (game-gated path)
+   SMOKE_RESULT {"compiled":1,"driver_ok":true,"failures":{},"json_decoded":3,"spawns":75,"warns":8,"writes":0}
+[PASS] lune smoke test: driver ran to completion, payloads compiled, BOOT_DATA JSON-decoded byte-exactly
+
+== 6. ZIP INTEGRITY ==
+[zip] wrote dist/roblox-modular.zip (4,726,691 bytes, 42 files)
+[zip] input/message(47).txt included: False
+[zip] DONE
+[PASS] build_zip.py ran clean
+[PASS] zip opens and every member passes CRC
+[PASS] zip contains src/, assets/, scripts/, dist/main.lua, README.md, Makefile
+[PASS] zip has no absolute paths or traversal segments
+[PASS] input/message(47).txt excluded from zip (use INCLUDE_INPUT=1 to embed)
+
+SUMMARY: 66 passed, 0 failed, 1 warnings, 0 skipped

@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Click",
+    "on": "menusounds/light7_on.ogg",
+    "off": "menusounds/light7_off.ogg",
+    "note": "127 ms, 2.8 kHz - short dry click"
+  },
+  {
+    "name": "Tick",
+    "on": "menusounds/function_on.ogg",
+    "off": "menusounds/function_off.ogg",
+    "note": "110 ms, 650 Hz - deluxe Function_ON/OFF"
+  },
+  {
+    "name": "Blip",
+    "on": "menusounds/light6_on.ogg",
+    "off": "menusounds/light6_off.ogg",
+    "note": "54 ms, 460 Hz - shortest of the set"
+  },
+  {
+    "name": "Snap",
+    "on": "menusounds/light5_on.ogg",
+    "off": "menusounds/light5_off.ogg",
+    "note": "140 ms, 7 kHz - bright noise burst"
+  },
+  {
+    "name": "Crisp",
+    "on": "menusounds/toshiba_on.ogg",
+    "off": "menusounds/toshiba_off.ogg",
+    "note": "170 ms, 5.5 kHz - toshiba module_enable/disable"
+  },
+  {
+    "name": "Pluck",
+    "on": "menusounds/deluxe_on.ogg",
+    "off": "menusounds/deluxe_off.ogg",
+    "note": "160 ms, 380 Hz - deluxe enable/disable"
+  },
+  {
+    "name": "Thud",
+    "on": "menusounds/light9_on.ogg",
+    "off": "menusounds/light9_off.ogg",
+    "note": "160 ms, 170 Hz - lowest of the set"
+  },
+  {
+    "name": "Notify",
+    "on": "menusounds/notify_on.ogg",
+    "off": "menusounds/notify_off.ogg",
+    "note": "245 ms, 470 Hz - deluxe notify_type1"
+  },
+  {
+    "name": "Soft Pluck",
+    "on": "menusounds/light8_on.ogg",
+    "off": "menusounds/light8_off.ogg",
+    "note": "245 ms, 470 Hz"
+  },
+  {
+    "name": "Bloop",
+    "on": "menusounds/light4_on.ogg",
+    "off": "menusounds/light4_off.ogg",
+    "note": "340 ms, 880 Hz - bright, fast decay"
+  },
+  {
+    "name": "Bell",
+    "on": "menusounds/light1_on.ogg",
+    "off": "menusounds/light1_off.ogg",
+    "note": "383 ms, 740 Hz - ringing"
+  },
+  {
+    "name": "Soft Bell",
+    "on": "menusounds/light10_on.ogg",
+    "off": "menusounds/light10_off.ogg",
+    "note": "385 ms, 790 Hz - quieter ring"
+  },
+  {
+    "name": "Chime",
+    "on": "menusounds/light2_on.ogg",
+    "off": "menusounds/light2_off.ogg",
+    "note": "540 ms, 880 Hz - long sustain"
+  },
+  {
+    "name": "Deep Chime",
+    "on": "menusounds/light3_on.ogg",
+    "off": "menusounds/light3_off.ogg",
+    "note": "640 ms, 410 Hz - longest and lowest"
+  }
+]

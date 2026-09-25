@@ -1,0 +1,147 @@
+[
+  {
+    "name": "Sticker 1",
+    "file": "stickers/sticker1_01.png",
+    "sheets": [
+      "stickers/sticker1_01.png",
+      "stickers/sticker1_02.png",
+      "stickers/sticker1_03.png",
+      "stickers/sticker1_04.png",
+      "stickers/sticker1_05.png",
+      "stickers/sticker1_06.png"
+    ],
+    "width": 1024,
+    "height": 1024,
+    "cols": 4,
+    "rows": 4,
+    "frames": 86,
+    "fps": 30,
+    "kind": "sheet"
+  },
+  {
+    "name": "Sticker 2",
+    "file": "stickers/sticker2_01.png",
+    "sheets": [
+      "stickers/sticker2_01.png",
+      "stickers/sticker2_02.png",
+      "stickers/sticker2_03.png",
+      "stickers/sticker2_04.png",
+      "stickers/sticker2_05.png",
+      "stickers/sticker2_06.png"
+    ],
+    "width": 1024,
+    "height": 1024,
+    "cols": 4,
+    "rows": 4,
+    "frames": 89,
+    "fps": 30,
+    "kind": "sheet"
+  },
+  {
+    "name": "Sticker 3",
+    "file": "stickers/sticker3_01.png",
+    "sheets": [
+      "stickers/sticker3_01.png",
+      "stickers/sticker3_02.png",
+      "stickers/sticker3_03.png",
+      "stickers/sticker3_04.png",
+      "stickers/sticker3_05.png",
+      "stickers/sticker3_06.png"
+    ],
+    "width": 1024,
+    "height": 1024,
+    "cols": 4,
+    "rows": 4,
+    "frames": 90,
+    "fps": 30,
+    "kind": "sheet"
+  },
+  {
+    "name": "Catgirl",
+    "file": "stickers/catgirl.png",
+    "width": 512,
+    "height": 512,
+    "cols": 1,
+    "rows": 1,
+    "frames": 1,
+    "fps": 1,
+    "kind": "image"
+  },
+  {
+    "name": "Catgirl 2",
+    "file": "stickers/catgirl2.png",
+    "width": 512,
+    "height": 512,
+    "cols": 1,
+    "rows": 1,
+    "frames": 1,
+    "fps": 1,
+    "kind": "image"
+  },
+  {
+    "name": "Emilia",
+    "file": "stickers/emilia.png",
+    "width": 512,
+    "height": 512,
+    "cols": 1,
+    "rows": 1,
+    "frames": 1,
+    "fps": 1,
+    "kind": "image"
+  },
+  {
+    "name": "Furry Maid",
+    "file": "stickers/furrymaid.png",
+    "width": 512,
+    "height": 512,
+    "cols": 1,
+    "rows": 1,
+    "frames": 1,
+    "fps": 1,
+    "kind": "image"
+  },
+  {
+    "name": "Kiskis",
+    "file": "stickers/kiskis.png",
+    "width": 512,
+    "height": 512,
+    "cols": 1,
+    "rows": 1,
+    "frames": 1,
+    "fps": 1,
+    "kind": "image"
+  },
+  {
+    "name": "Mylove",
+    "file": "stickers/mylove.png",
+    "width": 512,
+    "height": 512,
+    "cols": 1,
+    "rows": 1,
+    "frames": 1,
+    "fps": 1,
+    "kind": "image"
+  },
+  {
+    "name": "Nolik",
+    "file": "stickers/nolik.png",
+    "width": 512,
+    "height": 512,
+    "cols": 1,
+    "rows": 1,
+    "frames": 1,
+    "fps": 1,
+    "kind": "image"
+  },
+  {
+    "name": "Pinky",
+    "file": "stickers/pinky.png",
+    "width": 512,
+    "height": 512,
+    "cols": 1,
+    "rows": 1,
+    "frames": 1,
+    "fps": 1,
+    "kind": "image"
+  }
+]

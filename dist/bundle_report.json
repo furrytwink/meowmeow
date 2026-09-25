@@ -1,0 +1,42 @@
+{
+  "generated_utc": "2026-09-25T14:18:12+00:00",
+  "entry": "src/init.lua",
+  "source_modules": {
+    "neverlose": {
+      "file": "src/neverlose/init.lua",
+      "sha256": "e9acaec8bb4a5bce88f4709dea02b270bef87ccb92d24821796c71974ef51a83",
+      "chars": 35948
+    },
+    "visualsui": {
+      "file": "src/visualsui/init.luau",
+      "sha256": "585d922b8490e14d8ba8c9bf1a0de08d30a0351ddafa8618fafe3d194e8bf394",
+      "chars": 338481
+    },
+    "neverlose.skins": {
+      "file": "src/neverlose/skins.luau",
+      "sha256": "906035c695311f6ae3c0d4d9b825b45208b941af7996e51af80375d8cb6e957b",
+      "chars": 28664
+    },
+    "assets": {
+      "file": "assets/boot_data.json",
+      "sha256": "0bb23aa483230ba6357aafedd9ed8b5004c817f41f25de0e00ab32d999788ebb",
+      "chars": 1827778
+    }
+  },
+  "code_modules": {
+    "modules": {
+      "generated": true,
+      "file": "src/modules/init.lua"
+    },
+    "modules.example": {
+      "file": "src/modules/example.lua",
+      "sha256": "a3fdceaa16d47ab7c03d4509b39b148444c5215756c30e4121ab2b0a9cfa0f06",
+      "chars": 521
+    }
+  },
+  "dist": {
+    "file": "dist/main.lua",
+    "sha256": "296161dc0ae8dc33ea1067fc814fe82b1aa3596257a38b038fd38f824a10beac",
+    "bytes": 3124711
+  }
+}

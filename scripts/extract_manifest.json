@@ -1,0 +1,187 @@
+{
+  "generated_utc": "2026-09-25T14:17:41+00:00",
+  "input": {
+    "path": "input/message(47).txt",
+    "sha256": "ce0401343fcbe8431c42217a69216760127457b0e79ab55e38d7d3cc156e8f33",
+    "bytes": 3121224
+  },
+  "payloads": {
+    "SOURCE": {
+      "sha256": "e9acaec8bb4a5bce88f4709dea02b270bef87ccb92d24821796c71974ef51a83",
+      "chars": 35948,
+      "file": "src/neverlose/init.lua"
+    },
+    "LIBRARY_SOURCE": {
+      "sha256": "585d922b8490e14d8ba8c9bf1a0de08d30a0351ddafa8618fafe3d194e8bf394",
+      "chars": 338481,
+      "file": "src/visualsui/init.luau"
+    },
+    "BOOT_DATA": {
+      "sha256": "0bb23aa483230ba6357aafedd9ed8b5004c817f41f25de0e00ab32d999788ebb",
+      "chars": 1827778,
+      "file": "assets/boot_data.json"
+    },
+    "SKIN_SOURCE": {
+      "sha256": "906035c695311f6ae3c0d4d9b825b45208b941af7996e51af80375d8cb6e957b",
+      "chars": 28664,
+      "file": "src/neverlose/skins.luau"
+    }
+  },
+  "driver": {
+    "sha256": "259d88dd98eb4254d3f7d005e4609a196cc76f09cab3e0dddaf79c8d5fb74463",
+    "chars": 889739,
+    "file": "src/init.lua (verbatim tail after the marker line)",
+    "marker": "-- [ EXTRACTED DRIVER BODY — everything below is byte-exact from input/message(47).txt ]"
+  },
+  "boot_data": {
+    "manifest_count": 555,
+    "manifest_files": 555,
+    "manifest_total": 41838756,
+    "skyboxes": 64,
+    "text_assets": [
+      {
+        "path": "fxatlas/index.json",
+        "file": "assets/text/fxatlas_index.json",
+        "sha256": "537e904cecae725f3bc8e7779fdb538f9a43c0b9f5ef1d15f2c6e3709851296c",
+        "declared_size": 16525,
+        "embedded_len": 16525
+      },
+      {
+        "path": "menusounds/manifest.json",
+        "file": "assets/text/menusounds_manifest.json",
+        "sha256": "bccf51f2746b0ca315bbfac5e2839ee64f1baaddb4bab6920292eb1693365175",
+        "declared_size": 2289,
+        "embedded_len": 2204
+      },
+      {
+        "path": "stickers/manifest.json",
+        "file": "assets/text/stickers_manifest.json",
+        "sha256": "b7b45f3974a0cd8dc9cfc59ed472de7db374ae9585b1fe26f1737d2eea7b6d36",
+        "declared_size": 2896,
+        "embedded_len": 2750
+      }
+    ],
+    "binary_assets": [
+      {
+        "path": "images/furynew_sheet_1.png",
+        "file": "assets/binary/images/furynew_sheet_1.png",
+        "sha256_decoded": "28f678c2c7619801d9a3d4488ca4ad0b35161f0fddc378b7d5a3503c63492518",
+        "declared_size": 379247,
+        "decoded_size": 379247,
+        "b64_sha256": "f1ae17618f1129b75ae6d63c31c628131598a3803e29b4cd40aaf4a117ad8ad2"
+      },
+      {
+        "path": "images/furynew_sheet_2.png",
+        "file": "assets/binary/images/furynew_sheet_2.png",
+        "sha256_decoded": "a37aaa8a0ac9551d11b5ee1ae75888a377e134f20e5c350098bf757d16d0f3fa",
+        "declared_size": 380362,
+        "decoded_size": 380362,
+        "b64_sha256": "38523463c9496180966631b2d08c888674c037833b4d1d52c691a693992d5bed"
+      },
+      {
+        "path": "images/furynew_sheet_3.png",
+        "file": "assets/binary/images/furynew_sheet_3.png",
+        "sha256_decoded": "e0b1e50bc626440e101b7d5c1155cdb204888171168ddbafcbf461b54a9b7145",
+        "declared_size": 381624,
+        "decoded_size": 381624,
+        "b64_sha256": "bdcfd638512928a19bf2b3240ae3aaf64a5092ee7306953064edbe3707d90996"
+      },
+      {
+        "path": "images/telegram.png",
+        "file": "assets/binary/images/telegram.png",
+        "sha256_decoded": "cf09f60dc5fdad53897714b74ef538b114807ae38a09fda2863691e7bf5ebb73",
+        "declared_size": 1531,
+        "decoded_size": 1531,
+        "b64_sha256": "7c57e09f199030b2dfef17b584bb67aaa5930132aee1b9e3de16018f4daab837"
+      },
+      {
+        "path": "images/tiktok.png",
+        "file": "assets/binary/images/tiktok.png",
+        "sha256_decoded": "9e8fb51b834f727598fc81e0e5390024d40e6eeaedf1786bd8409383131dae6d",
+        "declared_size": 1354,
+        "decoded_size": 1354,
+        "b64_sha256": "8cfc2dac061fde25f83f719ab823968f9219edea80ddb83854bcdd281046523f"
+      },
+      {
+        "path": "images/ui_next.png",
+        "file": "assets/binary/images/ui_next.png",
+        "sha256_decoded": "bad2ba3cc98ce2ccc5b0599ee2279a825440173a65a8d7eccdce627d77cde326",
+        "declared_size": 2863,
+        "decoded_size": 2863,
+        "b64_sha256": "be73d294386ef3b72c96fa2f3fbfc589765c83a0358d1457109dc0bc1c6c233c"
+      },
+      {
+        "path": "images/ui_pause.png",
+        "file": "assets/binary/images/ui_pause.png",
+        "sha256_decoded": "3be9caccd21c761408fc1cf149439dc2373757533c8a2a2c4bb649ec33ed0f55",
+        "declared_size": 1423,
+        "decoded_size": 1423,
+        "b64_sha256": "1124bf695883178b96b9908f9a05068fab7c681b0b7bd4e06c7f34f9488ba8ad"
+      },
+      {
+        "path": "images/ui_play.png",
+        "file": "assets/binary/images/ui_play.png",
+        "sha256_decoded": "e079ea4de3fe04ce49026d53daf359f3e2d3a325a46a56b82a9002bbc151f64b",
+        "declared_size": 1539,
+        "decoded_size": 1539,
+        "b64_sha256": "10788c80582452222c7fde3640d60cb19e9a8dc9de2c89c88e25b990273177ca"
+      },
+      {
+        "path": "images/ui_prev.png",
+        "file": "assets/binary/images/ui_prev.png",
+        "sha256_decoded": "ca285f685da6e455b5904bbb07fe217771868fff7559fe77fecc2880bef0234f",
+        "declared_size": 2851,
+        "decoded_size": 2851,
+        "b64_sha256": "d2ac2135a4683e2440c80e682b2a5099b8d9a4da990c21c1b0f09ee6bd223ba5"
+      },
+      {
+        "path": "images/ui_stop.png",
+        "file": "assets/binary/images/ui_stop.png",
+        "sha256_decoded": "5991b22e50592627144dbef1eff599bd5d363f5710d613a102182b5aada8b564",
+        "declared_size": 1604,
+        "decoded_size": 1604,
+        "b64_sha256": "18ba0bd419ba1d9137bcc75dbfcd4874f6c00cb6dc6a214df911b36643e14b5a"
+      },
+      {
+        "path": "particles/comet_bloom.png",
+        "file": "assets/binary/particles/comet_bloom.png",
+        "sha256_decoded": "9481d5770dfa8046f0747d993e2df0db09e84c8dd31c305e8f8bfc37f74cb14f",
+        "declared_size": 4827,
+        "decoded_size": 4827,
+        "b64_sha256": "fffbed0d0407a8a5090412df9e44cc6ec58f65b003d80e445380987b57e7fa92"
+      },
+      {
+        "path": "particles/p_glow.png",
+        "file": "assets/binary/particles/p_glow.png",
+        "sha256_decoded": "3e6f79395f3589d0f27f1050d70b6921991cf8fa3321fb9d917e7d07e0d017cf",
+        "declared_size": 15265,
+        "decoded_size": 15265,
+        "b64_sha256": "60dea881bbf69816c6f2e96a84b0a89da01cfb3bdc3261e906dbcdc43562ee61"
+      },
+      {
+        "path": "sounds/time/dobroe-utrechko.ogg",
+        "file": "assets/binary/sounds/time/dobroe-utrechko.ogg",
+        "sha256_decoded": "cff3c416b3dfdf12d6cc145e53665f50e725aedb6e7d1722f2c48ba2345761eb",
+        "declared_size": 61305,
+        "decoded_size": 61305,
+        "b64_sha256": "55adcdd874769c5b83a885166874ea32c289792ff0b9c518ebfa8b4be324e929"
+      },
+      {
+        "path": "sounds/time/dobry-denb.ogg",
+        "file": "assets/binary/sounds/time/dobry-denb.ogg",
+        "sha256_decoded": "9f9711fedd5e0965fd3a14572b54f4f8e089c523d89d389cd9aecd92ff827aa9",
+        "declared_size": 47124,
+        "decoded_size": 47124,
+        "b64_sha256": "a3ca2753d2539749dad04a0f1513e60d5164b78fbb395667ee8c22ea1cd8f455"
+      },
+      {
+        "path": "sounds/time/dobry-vecher.ogg",
+        "file": "assets/binary/sounds/time/dobry-vecher.ogg",
+        "sha256_decoded": "e24c6f8db6766cd87890e7d865442f8ea7dd2bb9b6e94c08e6cc3833df7bb1de",
+        "declared_size": 53571,
+        "decoded_size": 53571,
+        "b64_sha256": "5edf2af0bfd26e8731e4f4f15e0f79ad48882f030e0367a10feaa68c66a83cd1"
+      }
+    ]
+  }
+}
